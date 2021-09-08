@@ -1,0 +1,13 @@
+.mainHeader {
+    display:flex;
+    justify-content: space-between;
+    background-color:#f7f7f7;
+}
+
+.navButton{ 
+    color:#bbbbbb;
+    background-color:#f7f7f7;
+    border:0;
+    font-size:30px;
+    padding:20px;
+}
