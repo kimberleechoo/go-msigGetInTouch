@@ -1,84 +1,8 @@
 @charset "UTF-8";
+
 /** Helpers and Utilities **/
-@font-face {
-  font-family: "pt_sansregular";
-  font-style: normal;
-  font-weight: 400;
-  src: url(/spa-assets/fonts/PTSans-Regular.ttf) format("truetype");
-}
-@font-face {
-  font-family: "pt_sansitalic";
-  font-style: italic;
-  font-weight: 400;
-  src: url(/spa-assets/fonts/PTSans-Italic.ttf) format("truetype");
-}
-@font-face {
-  font-family: "pt_sansbold";
-  font-style: normal;
-  font-weight: 700;
-  src: url(/spa-assets/fonts/PTSans-Bold.ttf) format("truetype");
-}
-@font-face {
-  font-family: "pt_sansbold";
-  font-style: italic;
-  font-weight: 700;
-  src: url(/spa-assets/fonts/PTSans-BoldItalic.ttf) format("truetype");
-}
-@font-face {
-  font-family: "PT Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: url(/spa-assets/fonts/PTSans-Regular.ttf) format("truetype");
-}
-@font-face {
-  font-family: "PT Sans";
-  font-style: italic;
-  font-weight: 400;
-  src: url(/spa-assets/fonts/PTSans-Italic.ttf) format("truetype");
-}
-@font-face {
-  font-family: "PT Sans";
-  font-style: normal;
-  font-weight: 700;
-  src: url(/spa-assets/fonts/PTSans-Bold.ttf) format("truetype");
-}
-@font-face {
-  font-family: "PT Sans";
-  font-style: italic;
-  font-weight: 700;
-  src: url(/spa-assets/fonts/PTSans-BoldItalic.ttf) format("truetype");
-}
-/** COLORS **/
-/** COMPONENTS **/
-/** TYPOGRAPHY **/
-/** BUTTONS & INPUTS **/
-:root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
-  --primary: #E11F27;
-  --secondary: #1B1464;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "PT Sans", Tahoma, Geneva, sans-serif;
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+* {
+    font-family: 'Titillium Web', sans-serif;
 }
