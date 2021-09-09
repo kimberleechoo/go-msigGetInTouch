@@ -13,7 +13,7 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/index.css" rel="stylesheet">
-
+    <script src="/js/index.js"></script>
 </head>
 
 <body>
@@ -68,8 +68,8 @@
                         <!-- radiobuttonStartsHere -->
                         <div class="enquirySection">
                             <p>Please choose one of the below:*</p>
-                            <input type="radio" name="typeofEnquiry" id="generalEnquiry" value="General Enquiry">
-                            <label for="generalEnqury">General Enquiry</label>
+                            <input type="radio" name="typeofEnquiry" id="generalEnquiry" value="General Enquiry" checked>
+                            <label for="generalEnquiry">General Enquiry</label>
                             <br>
                             <input type="radio" name="typeofEnquiry" id="productEnquiry" value="Product Enquiry">
                             <label for="productEnqury">Product Enquiry</label>
@@ -85,6 +85,72 @@
                         <div id="generalEnquiryForm" class="formContainer">
                             <div class="formTitle">
                                 <p class="bigBlueFont p-l-r-15">General Enquiry Form</p>
+                                <p class="redText p-l-r-15">(*) Required information</p>
+                            </div>
+                            <div>
+                                <p class="p-l-r-15 p-t-b-15">Use the form below to drop us an email and we will be in touch with you soon.</p>
+                                <div class="generalEnquirySection">
+
+                                    <!-- yes/no existing customer?  -->
+                                    <div class="p-l-r-15 p-t-b-15">
+                                        <p> Are you an existing MSIG customer?</p>
+                                        <input type="radio" name="existingCustomer" id="existingCustomerYes" value="Yes">
+                                        <label for="generalEnqury">Yes </label>
+
+                                        <input type="radio" name="existingCustomer" id="existingCustomerNo" value="No">
+                                        <label for="productEnqury">No </label>
+                                    </div>
+                                    <!-- end yes/no existing customer  -->
+                                    <form id="generalForm" action="#" class="geForm p-l-r-15">
+                                        <label for="fullName"></label><br>
+                                        <input type="text" id="fullName" name="fullName" placeholder="Full Name*">
+                                        <br>
+                                        <label for="email"></label><br>
+                                        <input type="text" id="email" name="email" placeholder="Email Address*">
+                                        <br>
+                                        <label for="contactNumber"></label><br>
+                                        <input type="number" id="contactNumber" name="contactNumber" placeholder="Contact Number*">
+                                        <br>
+                                        <div class="policyNum">
+                                            <label for="policyNumber"></label><br>
+                                            <input type="text" id="policyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
+                                            <br>
+                                        </div>
+
+                                        <label for="message"></label><br>
+                                        <input type="text" id="message" name="message" placeholder="Message*">
+                                        <br>
+                                        <div class=" recaptcha">
+                                            <div class="g-recaptcha" id="rcaptcha" data-sitekey="site key"></div>
+                                            <span id="captcha" style="color:red"></span>
+                                            <!-- this will show captcha errors -->
+                                        </div>
+                                        <div class="TNC">
+                                            <div class="checkboxTNC"> <input type="checkbox" id="privacyNotice" name="privacyNotice" value="privacyNoticeCheckBox">
+                                            </div>
+                                            <div class="labelTNC"><label for="vehicle1"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="formButtons">
+                                            <div class="formChildButtons">
+                                                <input type="submit" id="submit" value="Submit">
+                                            </div>
+                                            <div class="formChildButtons">
+                                                <input type="reset" id="reset" value="Clear">
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- general inquiry form ends here -->
+                        <!-- product enquiry form  -->
+                        <div id="productEnquiryForm" class="formContainer">
+                            <div class="formTitle">
+                                <p class="bigBlueFont p-l-r-15">Product Enquiry Form</p>
                                 <p class="redText p-l-r-15">(*) Required information</p>
                             </div>
                             <div>
@@ -122,11 +188,18 @@
                                             <span id="captcha" style="color:red"></span>
                                             <!-- this will show captcha errors -->
                                         </div>
-                                        <div>
-                                            <div class="p-t-b-15">
+                                        <div class="TNC">
+                                            <div class="checkboxTNC"> <input type="checkbox" id="privacyNotice" name="privacyNotice" value="privacyNoticeCheckBox">
+                                            </div>
+                                            <div class="labelTNC"><label for="vehicle1"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="formButtons">
+                                            <div class="formChildButtons">
                                                 <input type="submit" value="Submit">
                                             </div>
-                                            <div class="p-t-b-15">
+                                            <div class="formChildButtons">
                                                 <input type="reset" value="Clear">
                                             </div>
                                         </div>
@@ -136,31 +209,196 @@
 
                             </div>
                         </div>
-                        <!-- general inquiry form ends here -->
+                        <!-- end of Product Enquiry  -->
                     </div>
                 </div>
                 <!-- contact us TAB:  -->
                 <div id="contactUs" class="tab-pane fade">
                     <div id="contactUs" class="switchTabContent flexItem2">
-                        <div class="jumbotron">
-                            <h2 style="border-bottom:2px solid black">24 Hours Assist Helplines</h2>
-                            <div class="d-flex flex-column">
-                                <div class="p-2">Flex item 1</div>
-                                <div class="p-2">Flex item 2</div>
-                                <div class="p-2">Flex item 3</div>
-                                <div class="p-2">Flex item 3</div>
+                        <div class="contactUsFlexContainer">
+                            <div class="jumbotron contactUsTab">
+                                <h2 class="contactUsMainTitle">24 Hours Assist Helplines</h2>
+                                <div class="jumbotronWrapper">
+                                    <!-- Motor Assist  -->
+                                    <div class="jumboRow">
+                                        <div class="jumboColumnIMG">
+                                            <div class="jumboColumn1">
+                                                <img src="/assets/icons/Motor Assist.svg" alt="Motor Assist">
+
+                                            </div>
+                                        </div>
+                                        <div class="jumboColumnTEXT">
+                                            <div class="jumboColumn2">
+                                                <p class="contactTitle">Motor Assist</p>
+                                                <p class="contactInfo">Motor - Accident & Breakdown Assistance Services</p>
+                                                <p class="contactNum">1-300-880-833</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- end Motor Assist  -->
+                                    <!-- Home Assist  -->
+                                    <div class="jumboRow">
+                                        <div class="jumboColumnIMG">
+                                            <div class="jumboColumn1">
+                                                <img src="/assets/icons/Motor Assist.svg" alt="Home Assist">
+                                            </div>
+                                        </div>
+                                        <div class="jumboColumnTEXT">
+                                            <div class="jumboColumn2">
+                                                <p class="contactTitle">Home Assist</p>
+                                                <p class="contactInfo">Home Protection Policies</p>
+                                                <p class="contactNum">1-300-880-863</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- end Home Assist  -->
+                                    <!-- MSIG Assist (intl)  -->
+                                    <div class="jumboRow">
+                                        <div class="jumboColumnIMG">
+                                            <div class="jumboColumn1">
+                                                <img src="/assets/icons/MSIG Assist (International).svg" alt="Msig Intl Assist">
+                                            </div>
+                                        </div>
+                                        <div class="jumboColumnTEXT">
+                                            <div class="jumboColumn2">
+                                                <p class="contactTitle">MSIG Assist (International)</p>
+                                                <p class="contactInfo">Travel Insurance Policy, Overseas Student Insurance Policy, Healthcare International Insurance Policy (evacuation & repatriation)</p>
+                                                <p class="contactNum">+603 7965 3930</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end MSIG Assist (intl) -->
+                                    <!-- MSIG Assist (Dom) -->
+                                    <div class="jumboRow">
+                                        <div class="jumboColumnIMG">
+                                            <div class="jumboColumn1">
+                                                <img src="/assets/icons/MSIG Assist (Domestic).svg" alt="Msig Dom Assist">
+                                            </div>
+                                        </div>
+                                        <div class="jumboColumnTEXT">
+                                            <div class="jumboColumn2">
+                                                <p class="contactTitle">MSIG Assist (Domestic)</p>
+                                                <p class="contactInfo">Healthcare International Insurance Policy, Flexihealth Insurance Policy, Edu Medicare Policy</p>
+                                                <p class="contactNum">+603 7628 3980</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- end MSIG Assist (Dom) -->
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="customerServiceFlexContainer">
+                            <div class="jumbotron customerServiceTab">
+                                <h2 class="contactUsMainTitle">Customer Service Centre</h2>
+                                <div class="custServiceSubTitle">
+                                    <p class="custServiceHours">Open Monday - Friday<br>8:30am - 5:30pm</p>
+                                </div>
+                                <div class="jumbotronWrapper">
+                                    <!-- Customer Service Hotline  -->
+                                    <div class="jumboRow">
+                                        <div class="jumboColumnIMG">
+                                            <div class="jumboColumn1">
+                                                <img src="/assets/icons/CS Hotline.svg" alt="Cs Hotline">
+
+                                            </div>
+                                        </div>
+                                        <div class="jumboColumnTEXT">
+                                            <div class="jumboColumn2">
+                                                <p class="contactTitle">Customer Service Hotline</p>
+
+                                                <p class="contactNum">1-800-88-MSIG (6744)</p>
+                                                <p class="contactTitle">General Line</p>
+
+                                                <p class="contactNum">+603 2050 8228</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- end Customer Service Hotline -->
+                                    <!-- FAX   -->
+                                    <div class="jumboRow">
+                                        <div class="jumboColumnIMG">
+                                            <div class="jumboColumn1">
+                                                <img src="/assets/icons/Fax.svg" alt="Fax">
+                                            </div>
+                                        </div>
+                                        <div class="jumboColumnTEXT">
+                                            <div class="jumboColumn2">
+                                                <p class="contactTitle">Fax</p>
+
+                                                <p class="contactNum">+603 2026 8086</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- end FAX  -->
+                                    <!-- Bancassurance -->
+                                    <div class="jumboRow">
+                                        <div class="jumboColumnIMG">
+                                            <div class="jumboColumn1">
+                                                <img src="/assets/icons/Bancassurance Hotline.png" alt="Bancassurance">
+                                            </div>
+                                        </div>
+                                        <div class="jumboColumnTEXT">
+                                            <div class="jumboColumn2">
+                                                <p class="contactTitle">Bancassurance Hotline</p>
+
+                                                <p class="contactNum">1-800-88-6163</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end Bancassurance -->
+                                    <!-- Visit Us -->
+                                    <div class="jumboRow">
+                                        <div class="jumboColumnIMG">
+                                            <div class="jumboColumn1">
+                                                <img src="/assets/icons/Visit Us.svg" alt="Visit Us">
+                                            </div>
+                                        </div>
+                                        <div class="jumboColumnTEXT">
+                                            <div class="jumboColumn2">
+                                                <p class="contactTitle">MSIG Assist (Domestic)</p>
+                                                <p class="directionText">Get Directions
+                                                    <a href="#">
+                                                        <span class="glyphicon glyphicon-arrow-right"></span>
+                                                    </a>
+                                                </p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- end MSIG Assist (Dom) -->
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <!-- end of contact us TAB  -->
-                </div>
 
+                </div>
+                <!-- end of contact us TAB  -->
             </div>
+
+        </div>
         </div>
     </section>
 </body>
 <footer>
+    <div>
+        <nav class="footerMenu container container-fluid">
+            <ul>
+                <li>About</li>
+                <li>Personal</li>
+                <li>Business</li>
+                <li>Claims</li>
 
+            </ul>
+        </nav>
+    </div>
 </footer>
 
 </html>
