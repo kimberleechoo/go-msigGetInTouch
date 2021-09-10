@@ -87,7 +87,7 @@ h2 {
 }
 
 p {
-    font-size: 16pt;
+    font-size: 16px;
     color: #646464;
 }
 
@@ -104,7 +104,7 @@ ul.nav.nav-pills.navSection {
     background-color: #E11F27;
     border: 3px solid #E11F27 !important;
     color: #FFFFFF;
-    font-size: 21pt;
+    font-size: 21px;
     border: 0;
 }
 
@@ -115,7 +115,7 @@ ul.nav.nav-pills.navSection {
 .nav-pills.navSection>li>a {
     background-color: #FFFFFF;
     color: #050046;
-    font-size: 21pt;
+    font-size: 21px;
     border-bottom: 4px solid #050046;
     border-radius: 0;
     font-weight: 700;
@@ -124,7 +124,7 @@ ul.nav.nav-pills.navSection {
 .bigBlueFont {
     padding-top: 15px;
     color: #050046;
-    font-size: 21pt;
+    font-size: 21px;
     font-weight: 700;
 }
 
@@ -136,7 +136,7 @@ ul.nav.nav-pills.navSection {
 label {
     font-family: 'Titillium Web', sans-serif;
     font-weight: normal;
-    font-size: 16pt;
+    font-size: 16px;
     color: #646464;
     padding-left: 15px;
     margin-right: 15px;
@@ -178,7 +178,7 @@ input[type="radio"]:checked {
 
 .formContainer .formTitle {
     background: #F7F7F7;
-    font-size: 21pt;
+    font-size: 21px;
     height: 100px;
 }
 
@@ -202,7 +202,7 @@ input[type="radio"]:checked {
 
 .redText {
     color: #E11F27;
-    font-size: 16pt;
+    font-size: 16px;
 }
 
 .formContainer {
@@ -211,18 +211,19 @@ input[type="radio"]:checked {
     margin-bottom: 48px;
 }
 
-.geForm input {
+.geForm input[type="text"],
+input[type="tel"] {
     width: 100%;
     border-radius: 32px;
     height: 80px;
     outline: none;
     border: 1px solid #676767;
-    font-size: 16pt;
+    font-size: 16px;
     padding-left: 12px;
 }
 
 .geForm input::placeholder {
-    font-size: 16pt;
+    font-size: 16px;
     color: #646464;
     padding-left: 12px;
 }
@@ -237,7 +238,7 @@ input[type="submit"] {
     background-color: #E11F27;
     color: #FFFFFF;
     border: 0.5px solid #E11F27;
-    font-size: 16pt;
+    font-size: 16px;
     font-weight: 700;
     border-radius: 25px;
 }
@@ -260,7 +261,7 @@ input[type="reset"] {
     background-color: #FFFFFF;
     color: #646464;
     border: 0.5px solid #BBBBBB;
-    font-size: 16pt;
+    font-size: 16px;
     font-weight: 700;
     border-radius: 25px;
 }
@@ -271,7 +272,7 @@ input[type="reset"]:hover {
     border: 0.5px solid #BBBBBB;
 }
 
-.g-recaptcha {
+.g-recapxcha {
     padding-top: 30px;
     padding-left: 15px;
     transform: scale(0.8);
@@ -306,7 +307,7 @@ input[type=checkbox] {
 }
 
 .TNC label {
-    font-size: 14pt;
+    font-size: 14px;
 }
 
 .TNC label>a {
@@ -354,42 +355,42 @@ input[type=checkbox] {
 }
 
 p.contactTitle {
-    font-size: 16pt;
+    font-size: 16px;
     color: #1C0063;
     font-weight: 700;
     margin-bottom: 0;
 }
 
 p.contactInfo {
-    font-size: 14pt;
+    font-size: 14px;
     color: #646464;
     line-height: 1.5;
 }
 
 p.contactNum {
-    font-size: 14pt;
+    font-size: 14px;
     color: #0066CC;
 }
 
 h2.contactUsMainTitle {
-    font-size: 28pt;
+    font-size: 28px;
     color: #1C0063;
     font-weight: 700;
 }
 
 p.directionText {
     color: #1C0063;
-    font-size: 16pt;
+    font-size: 16px;
 }
 
 p.custServiceHours {
-    font-size: 16pt;
+    font-size: 16px;
     color: #646464;
 }
 
 .directionText span {
     color: red;
-    font-size: 20pt;
+    font-size: 20px;
     position: relative;
     top: 5px;
 }
@@ -420,10 +421,18 @@ footer ul {
 footer li {
     list-style: none;
     color: #676767;
-    font-size: 14pt;
+    font-size: 14px;
     text-align: center;
 }
 
 span.error {
+    color: #E11F27;
+    padding: 10px;
+}
+
+
+/* form dropdown  */
+
+.geForm select {
     color: red;
 }

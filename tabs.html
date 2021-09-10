@@ -1,0 +1,94 @@
+<!-- tabs  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <script src="/js/index.js"></script>
+</head>
+
+<body>
+    <div id="productEnquiryForm" class="formContainer">
+        <div class="formTitle">
+            <p class="bigBlueFont p-l-r-15">Product Enquiry Form</p>
+            <p class="redText p-l-r-15">(*) Required information</p>
+        </div>
+        <div>
+            <p class="p-l-r-15 p-t-b-15">Use the form below to drop us an email and we will be in touch with you soon.</p>
+            <div class="generalEnquirySection">
+
+                <!-- yes/no existing customer?  -->
+                <div class="p-l-r-15 p-t-b-15">
+                    <p> Are you an existing MSIG customer?</p>
+                    <input type="radio" name="existingCustomer" id="existingCustomerYes" value="Yes">
+                    <label for="generalEnqury">Yes </label>
+
+                    <input type="radio" name="existingCustomer" id="existingCustomerNo" value="No">
+                    <label for="productEnqury">No </label>
+                </div>
+                <!-- end yes/no existing customer  -->
+                <form action="#" class="geForm p-l-r-15">
+                    <label for="fullName"></label><br>
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name*">
+                    <br>
+                    <label for="email"></label><br>
+                    <input type="text" id="email" name="email" placeholder="Email Address*">
+                    <br>
+                    <label for="contactNumber"></label><br>
+                    <input type="number" id="contactNumber" name="contactNumber" placeholder="Contact Number*">
+                    <br>
+                    <label for="policyNumber"></label><br>
+                    <input type="text" id="policyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
+                    <br>
+                    <div class="productDropdown">
+                        <div class="typeofProduct">
+                            <input type="radio" name="typeofProduct" id="typeofProduct" value="Personal">
+                            <label for="generalEnqury">Personal </label>
+                            <input type="radio" name="typeofProduct" id="typeofProduct" value="Business">
+                            <label for="generalEnqury">Business </label>
+                        </div>
+                        <label for="productCategory">Product Category</label>
+                        <select id="productCategory" name="productCategory">
+                            <option value="cat1">Category 1</option>
+                            <option value="cat2">Category 2</option>
+                            <option value="cat3">Category 3</option>
+                            <option value="cat4">Category 4</option>
+                            </select>
+                    </div>
+                    <label for="message"></label><br>
+                    <input type="text" id="message" name="message" placeholder="Message*">
+                    <br>
+                    <div class=" recaptcha">
+                        <div class="g-recaptcha" id="rcaptcha" data-sitekey="site key"></div>
+                        <span id="captcha" style="color:red"></span>
+                        <!-- this will show captcha errors -->
+                    </div>
+                    <div class="TNC">
+                        <div class="checkboxTNC"> <input type="checkbox" id="privacyNotice" name="privacyNotice" value="privacyNoticeCheckBox">
+                        </div>
+                        <div class="labelTNC"><label for="termsCondition"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
+                        </div>
+
+                    </div>
+                    <div class="formButtons">
+                        <div class="formChildButtons">
+                            <input type="submit" value="Submit">
+                        </div>
+                        <div class="formChildButtons">
+                            <input type="reset" value="Clear">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -94,14 +94,14 @@
                                     <!-- yes/no existing customer?  -->
                                     <div class="p-l-r-15 p-t-b-15">
                                         <p> Are you an existing MSIG customer?</p>
-                                        <input type="radio" name="existingCustomer" id="existingCustomerYes" value="Yes">
+                                        <input type="radio" name="existingCustomer" id="existingCustomerYes" value="Yes" checked>
                                         <label for="generalEnqury">Yes </label>
 
                                         <input type="radio" name="existingCustomer" id="existingCustomerNo" value="No">
                                         <label for="productEnqury">No </label>
                                     </div>
                                     <!-- end yes/no existing customer  -->
-                                    <form id="generalForm" action="#" class="geForm p-l-r-15">
+                                    <form name="generalEnquiryForm" id="generalForm" action="#" class="geForm p-l-r-15">
                                         <label for="fullName"></label><br>
                                         <input type="text" id="fullName" name="fullName" placeholder="Full Name*">
                                         <br>
@@ -109,7 +109,7 @@
                                         <input type="text" id="email" name="email" placeholder="Email Address*">
                                         <br>
                                         <label for="contactNumber"></label><br>
-                                        <input type="number" id="contactNumber" name="contactNumber" placeholder="Contact Number*">
+                                        <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact Number*">
                                         <br>
                                         <div class="policyNum">
                                             <label for="policyNumber"></label><br>
@@ -128,7 +128,7 @@
                                         <div class="TNC">
                                             <div class="checkboxTNC"> <input type="checkbox" id="privacyNotice" name="privacyNotice" value="privacyNoticeCheckBox">
                                             </div>
-                                            <div class="labelTNC"><label for="vehicle1"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
+                                            <div class="labelTNC"><label for="termsCondition"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
                                             </div>
 
                                         </div>
@@ -175,11 +175,40 @@
                                         <input type="text" id="email" name="email" placeholder="Email Address*">
                                         <br>
                                         <label for="contactNumber"></label><br>
-                                        <input type="number" id="contactNumber" name="contactNumber" placeholder="Contact Number*">
+                                        <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact Number*">
                                         <br>
                                         <label for="policyNumber"></label><br>
                                         <input type="text" id="policyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
                                         <br>
+                                        <div class="typeOfProduct">
+                                            <div>
+                                                <p>Type of Product</p>
+                                                <input type="radio" name="typeofProducts" id="personalProduct" value="Personal">
+                                                <label for="generalEnqury">Personal </label>
+                                                <input type="radio" name="typeofProducts" id="businessProduct" value="Business">
+                                                <label for="generalEnqury">Business </label>
+                                            </div>
+                                            <div class="productCategory">
+
+                                                <select id="productCategory" name="productCategory">
+                                                <option value="" disabled selected>Product Category*</option>
+                                                <option value="cat1">Category 1</option>
+                                                <option value="cat2">Category 2</option>
+                                                <option value="cat3">Category 3</option>
+                                                <option value="cat4">Category 4</option>
+                                                </select>
+                                            </div>
+                                            <div class="productName">
+
+                                                <select id="productName" name="productName">
+                                                <option value="" disabled selected>Product Name</option>
+                                                <option value="cat1">Name 1</option>
+                                                <option value="cat2">Name 2</option>
+                                                <option value="cat3">Name 3</option>
+                                                <option value="cat4">Name 4</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <label for="message"></label><br>
                                         <input type="text" id="message" name="message" placeholder="Message*">
                                         <br>
@@ -191,7 +220,7 @@
                                         <div class="TNC">
                                             <div class="checkboxTNC"> <input type="checkbox" id="privacyNotice" name="privacyNotice" value="privacyNoticeCheckBox">
                                             </div>
-                                            <div class="labelTNC"><label for="vehicle1"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
+                                            <div class="labelTNC"><label for="termsCondition"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
                                             </div>
 
                                         </div>
