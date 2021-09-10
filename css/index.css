@@ -222,10 +222,28 @@ input[type="tel"] {
     padding-left: 12px;
 }
 
+.geForm textarea {
+    width: 100%;
+    border-radius: 32px;
+    height: 80px;
+    outline: none;
+    border: 1px solid #676767;
+    font-size: 16px;
+    padding-left: 12px;
+    height: 120px;
+}
+
 .geForm input::placeholder {
     font-size: 16px;
     color: #646464;
     padding-left: 12px;
+}
+
+.geForm textarea::placeholder {
+    font-size: 16px;
+    color: #646464;
+    padding-left: 12px;
+    padding-top: 45px;
 }
 
 .geForm input#message {
@@ -272,7 +290,7 @@ input[type="reset"]:hover {
     border: 0.5px solid #BBBBBB;
 }
 
-.g-recapxcha {
+.g-recaptcha {
     padding-top: 30px;
     padding-left: 15px;
     transform: scale(0.8);
@@ -302,7 +320,6 @@ input[type=checkbox] {
 }
 
 .labelTNC {
-    padding-top: 24px;
     padding-bottom: 24px;
 }
 
@@ -434,5 +451,70 @@ span.error {
 /* form dropdown  */
 
 .geForm select {
-    color: red;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 32px;
+    height: 80px;
+    outline: none;
+    border: 1px solid #676767;
+    color: #1C0063;
+    font-family: 'Titillium Web', sans-serif;
+    padding-left: 15px;
+    background: transparent;
+    /* -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(45deg, transparent 35%, #646464 50%, #646464 calc(50% + 1px), transparent calc(47% + 2px)), linear-gradient(-45deg, transparent 47%, #646464 50%, #646464 calc(52% + 1px), transparent calc(57% + 2px));
+    background-position: calc(100% - 17px) calc(2em + 1px), calc(102% - 12px) calc(2em + 1px), calc(100% - 0em) 0.5em;
+    background-size: 10px 10px, 10px 10px, 1px 0.5em;
+    background-repeat: no-repeat; */
+}
+
+span.redAsterisk {
+    color: #E11F27;
+}
+
+.pdfLink {
+    padding-left: 22px;
+    background: url('/assets/icons/pdf-file.svg') no-repeat 3px 6px;
+    background-size: 13px;
+    display: block;
+    padding-top: 2px;
+    color: #1C0063;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.pdfLink1 {
+    padding-left: 22px;
+    background: url('/assets/icons/pdf-file.svg') no-repeat 3px 6px;
+    background-size: 13px;
+    display: inline-block;
+    padding-top: 2px;
+    color: #1C0063;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.geForm input#correspondenceAddress {
+    height: 120px;
+    line-break: normal;
+}
+
+.typeOfProduct {
+    padding-top: 15px;
+}
+
+.altReturn {
+    margin-top: 72px;
+    padding-right: 15px;
+}
+
+.altAddress span {
+    font-size: 12px;
+    color: #646464;
+    display: block;
 }

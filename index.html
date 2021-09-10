@@ -65,9 +65,9 @@
                 <div id="writeToUs" class="tab-pane fade in active">
                     <div id="writeToUs" class="switchTabContent flexItem1">
                         <p class="bigBlueFont">Write to us your questions, feedback, or request to change your personal details.</p>
-                        <!-- radiobuttonStartsHere -->
+                        <!-- choose form radiobuttonStartsHere 👉 -->
                         <div class="enquirySection">
-                            <p>Please choose one of the below:*</p>
+                            <p>Please choose one of the below:<span class="redAsterisk">   *</span></p>
                             <input type="radio" name="typeofEnquiry" id="generalEnquiry" value="General Enquiry" checked>
                             <label for="generalEnquiry">General Enquiry</label>
                             <br>
@@ -80,8 +80,8 @@
                             <input type="radio" name="typeofEnquiry" id="changeOfPersonal" value="Change of Personal Details">
                             <label for="changeOfPersonal">Change of Personal Details</label>
                         </div>
-                        <!-- radioButtonEndsHere -->
-                        <!-- general inquiry form: -->
+                        <!-- choose form radioButtonEndsHere -->
+                        <!-- general inquiry form 👉 -->
                         <div id="generalEnquiryForm" class="formContainer">
                             <div class="formTitle">
                                 <p class="bigBlueFont p-l-r-15">General Enquiry Form</p>
@@ -91,25 +91,27 @@
                                 <p class="p-l-r-15 p-t-b-15">Use the form below to drop us an email and we will be in touch with you soon.</p>
                                 <div class="generalEnquirySection">
 
-                                    <!-- yes/no existing customer?  -->
-                                    <div class="p-l-r-15 p-t-b-15">
-                                        <p> Are you an existing MSIG customer?</p>
-                                        <input type="radio" name="existingCustomer" id="existingCustomerYes" value="Yes" checked>
-                                        <label for="generalEnqury">Yes </label>
 
-                                        <input type="radio" name="existingCustomer" id="existingCustomerNo" value="No">
-                                        <label for="productEnqury">No </label>
-                                    </div>
-                                    <!-- end yes/no existing customer  -->
-                                    <form name="generalEnquiryForm" id="generalForm" action="#" class="geForm p-l-r-15">
+
+                                    <form name="generalEnquiryForm" id="generalForm" action="#" autocomplete="off" class="geForm p-l-r-15">
+                                        <!-- yes/no existing customer?  -->
+                                        <div class="p-l-r-15 p-t-b-15">
+                                            <p> Are you an existing MSIG customer?</p>
+                                            <input type="radio" name="GEexistingCustomer" id="existingCustomerYes" value="Yes" checked>
+                                            <label for="existingCustomerYes">Yes </label>
+
+                                            <input type="radio" name="GEexistingCustomer" id="existingCustomerNo" value="No">
+                                            <label for="existingCustomerNo">No </label>
+                                        </div>
+                                        <!-- end yes/no existing customer  -->
                                         <label for="fullName"></label><br>
-                                        <input type="text" id="fullName" name="fullName" placeholder="Full Name*">
+                                        <input type="text" id="fullName" name="fullName" placeholder="Full Name *">
                                         <br>
                                         <label for="email"></label><br>
-                                        <input type="text" id="email" name="email" placeholder="Email Address*">
+                                        <input type="text" id="email" name="email" placeholder="Email Address *">
                                         <br>
                                         <label for="contactNumber"></label><br>
-                                        <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact Number*">
+                                        <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact Number *">
                                         <br>
                                         <div class="policyNum">
                                             <label for="policyNumber"></label><br>
@@ -118,7 +120,7 @@
                                         </div>
 
                                         <label for="message"></label><br>
-                                        <input type="text" id="message" name="message" placeholder="Message*">
+                                        <textarea placeholder="Message *" name="message" id="message"></textarea>
                                         <br>
                                         <div class=" recaptcha">
                                             <div class="g-recaptcha" id="rcaptcha" data-sitekey="site key"></div>
@@ -147,8 +149,8 @@
                             </div>
                         </div>
                         <!-- general inquiry form ends here -->
-                        <!-- product enquiry form  -->
-                        <div id="productEnquiryForm" class="formContainer">
+                        <!-- product enquiry form 👉 -->
+                        <div id="productEnquiryFormSection" class="formContainer">
                             <div class="formTitle">
                                 <p class="bigBlueFont p-l-r-15">Product Enquiry Form</p>
                                 <p class="redText p-l-r-15">(*) Required information</p>
@@ -157,41 +159,45 @@
                                 <p class="p-l-r-15 p-t-b-15">Use the form below to drop us an email and we will be in touch with you soon.</p>
                                 <div class="generalEnquirySection">
 
-                                    <!-- yes/no existing customer?  -->
-                                    <div class="p-l-r-15 p-t-b-15">
-                                        <p> Are you an existing MSIG customer?</p>
-                                        <input type="radio" name="existingCustomer" id="existingCustomerYes" value="Yes">
-                                        <label for="generalEnqury">Yes </label>
 
-                                        <input type="radio" name="existingCustomer" id="existingCustomerNo" value="No">
-                                        <label for="productEnqury">No </label>
-                                    </div>
-                                    <!-- end yes/no existing customer  -->
-                                    <form action="#" class="geForm p-l-r-15">
+                                    <form id="prodEnqForm" action="#" autocomplete="off" class="geForm p-l-r-15">
+                                        <!-- yes/no existing customer?  -->
+                                        <div class="p-l-r-15 p-t-b-15">
+                                            <p> Are you an existing MSIG customer?</p>
+                                            <input type="radio" name="PEexistingCustomer" id="prodEnqexistingCustomerYes" value="Yes" checked>
+                                            <label for="prodEnqexistingCustomerYes">Yes </label>
+
+                                            <input type="radio" name="PEexistingCustomer" id="prodEnqexistingCustomerNo" value="No">
+                                            <label for="prodEnqexistingCustomerNo">No </label>
+                                        </div>
+                                        <!-- end yes/no existing customer  -->
                                         <label for="fullName"></label><br>
-                                        <input type="text" id="fullName" name="fullName" placeholder="Full Name*">
+                                        <input type="text" id="prodEnqfullName" name="fullName" placeholder="Full Name *">
                                         <br>
                                         <label for="email"></label><br>
-                                        <input type="text" id="email" name="email" placeholder="Email Address*">
+                                        <input type="text" id="prodEnqemail" name="email" placeholder="Email Address *">
                                         <br>
                                         <label for="contactNumber"></label><br>
-                                        <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact Number*">
+                                        <input type="tel" id="prodEnqcontactNumber" name="contactNumber" placeholder="Contact Number *">
                                         <br>
-                                        <label for="policyNumber"></label><br>
-                                        <input type="text" id="policyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
-                                        <br>
+                                        <div class="policyNum">
+                                            <label for="policyNumber"></label><br>
+                                            <input type="text" id="prodEnqpolicyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
+                                            <br>
+                                        </div>
+                                        <!-- type of Product here:👉 -->
                                         <div class="typeOfProduct">
                                             <div>
                                                 <p>Type of Product</p>
-                                                <input type="radio" name="typeofProducts" id="personalProduct" value="Personal">
+                                                <input type="radio" name="typeofProducts" id="personalProduct" value="Personal" checked>
                                                 <label for="generalEnqury">Personal </label>
                                                 <input type="radio" name="typeofProducts" id="businessProduct" value="Business">
                                                 <label for="generalEnqury">Business </label>
                                             </div>
-                                            <div class="productCategory">
+                                            <div class="productCategory ">
 
-                                                <select id="productCategory" name="productCategory">
-                                                <option value="" disabled selected>Product Category*</option>
+                                                <select id="productCategorySel" name="productCategory">
+                                                <option value="" selected>Product Category *</option>
                                                 <option value="cat1">Category 1</option>
                                                 <option value="cat2">Category 2</option>
                                                 <option value="cat3">Category 3</option>
@@ -199,7 +205,6 @@
                                                 </select>
                                             </div>
                                             <div class="productName">
-
                                                 <select id="productName" name="productName">
                                                 <option value="" disabled selected>Product Name</option>
                                                 <option value="cat1">Name 1</option>
@@ -210,15 +215,17 @@
                                             </div>
                                         </div>
                                         <label for="message"></label><br>
-                                        <input type="text" id="message" name="message" placeholder="Message*">
+                                        <textarea placeholder="Message *" name="message" id="productenqMessage"></textarea>
+                                        <br>
+
                                         <br>
                                         <div class=" recaptcha">
-                                            <div class="g-recaptcha" id="rcaptcha" data-sitekey="site key"></div>
+                                            <div class="g-recaptcha" id="prodEnqrcaptcha" data-sitekey="site key"></div>
                                             <span id="captcha" style="color:red"></span>
                                             <!-- this will show captcha errors -->
                                         </div>
                                         <div class="TNC">
-                                            <div class="checkboxTNC"> <input type="checkbox" id="privacyNotice" name="privacyNotice" value="privacyNoticeCheckBox">
+                                            <div class="checkboxTNC"> <input type="checkbox" id="prodEnqprivacyNotice" name="privacyNotice" value="privacyNoticeCheckBox">
                                             </div>
                                             <div class="labelTNC"><label for="termsCondition"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
                                             </div>
@@ -226,10 +233,10 @@
                                         </div>
                                         <div class="formButtons">
                                             <div class="formChildButtons">
-                                                <input type="submit" value="Submit">
+                                                <input type="submit" id="prodEnqsubmit" value="Submit">
                                             </div>
                                             <div class="formChildButtons">
-                                                <input type="reset" value="Clear">
+                                                <input type="reset" id="prodEnqreset" value="Clear">
                                             </div>
                                         </div>
 
@@ -239,6 +246,149 @@
                             </div>
                         </div>
                         <!-- end of Product Enquiry  -->
+                        <!-- feedback/complaint form 👉 -->
+                        <div id="feedbackFormSection" class="formContainer">
+                            <div class="formTitle">
+                                <p class="bigBlueFont p-l-r-15">Feedback / Complaint Form</p>
+                                <p class="redText p-l-r-15">(*) Required information</p>
+                            </div>
+                            <div>
+                                <p class="p-l-r-15 p-t-b-15">Use the form below to drop us an email and we will be in touch with you soon.</p>
+                                <p class="p-l-r-15 p-t-b-15">To understand how we manage your feedback and complaints, you can refer to<br><a class="pdfLink" href="/assets/pdf/MSIGCFMP.pdf" download>MSIG’s Feedback and Complaint Handling Procedure</a></p>
+                                <div class="generalEnquirySection">
+
+
+                                    <form name="feedbackCompForm" id="feedbackForm" action="#" autocomplete="off" class="geForm p-l-r-15">
+                                        <!-- yes/no existing customer?  -->
+                                        <div class="p-l-r-15 p-t-b-15">
+                                            <p> Are you an existing MSIG customer?</p>
+                                            <input type="radio" name="FEexistingCustomer" id="feedbackexistingCustomerYes" value="Yes" checked>
+                                            <label for="feedbackexistingCustomerYes">Yes </label>
+
+                                            <input type="radio" name="FEexistingCustomer" id="feedbackexistingCustomerNo" value="No">
+                                            <label for="feedbackexistingCustomerNo">No </label>
+                                        </div>
+                                        <!-- end yes/no existing customer  -->
+                                        <label for="fullName"></label><br>
+                                        <input type="text" id="feedbackfullName" name="fullName" placeholder="Full Name *">
+                                        <br>
+                                        <label for="email"></label><br>
+                                        <input type="text" id="feedbackemail" name="email" placeholder="Email Address *">
+                                        <br>
+                                        <label for="contactNumber"></label><br>
+                                        <input type="tel" id="feedbackcontactNumber" name="contactNumber" placeholder="Contact Number*">
+                                        <br>
+                                        <div class="policyNum">
+                                            <label for="policyNumber"></label><br>
+                                            <input type="text" id="feedbackpolicyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
+                                            <br>
+                                        </div>
+
+                                        <label for="message"></label><br>
+                                        <textarea placeholder="Message *" name="message" id="feedbackMessage"></textarea>
+                                        <br>
+                                        <div class=" recaptcha">
+                                            <div class="g-recaptcha" id="feedbackrcaptcha" data-sitekey="site key"></div>
+                                            <span id="captcha" style="color:red"></span>
+                                            <!-- this will show captcha errors -->
+                                        </div>
+                                        <div class="TNC">
+                                            <div class="checkboxTNC"> <input type="checkbox" id="feedbackprivacyNotice" name="privacyNotice" value="privacyNoticeCheckBox">
+                                            </div>
+                                            <div class="labelTNC"><label for="termsCondition"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="formButtons">
+                                            <div class="formChildButtons">
+                                                <input type="submit" id="feedbackEnqsubmit" value="Submit">
+                                            </div>
+                                            <div class="formChildButtons">
+                                                <input type="reset" id="feedbackreset" value="Clear">
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- end of feedback form  -->
+                        <!-- Personal Data Correction Form 👉 -->
+                        <div id="dataCorrectionFormSection" class="formContainer">
+                            <div class="formTitle">
+                                <p class="bigBlueFont p-l-r-15">Personal Data Access / Correction Request</p>
+                                <p class="redText p-l-r-15">(*) Required information</p>
+                            </div>
+                            <div>
+                                <p class="p-l-r-15 p-t-b-15">We at MSIG are committed to protecting and safe-guarding the privacy of your Personal Data. Please click on either one of the following two to read on:
+                                    <a class="pdfLink" href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice (English)</a>
+                                    <a class="pdfLink" href="/assets/pdf/PrivacyNotice_BM_May2017.pdf" download>Privacy Notice (Bahasa Malaysia)</a></p>
+                                <div class="generalEnquirySection">
+
+                                    <form name="dataEnqForm" id="dataCorrectionForm" action="#" autocomplete="off" class="geForm p-l-r-15">
+                                        <label for="fullName"></label><br>
+                                        <input type="text" id="dataEnqfullName" name="fullName" placeholder="Full Name *">
+                                        <br>
+                                        <label for="nric"></label><br>
+                                        <input type="text" id="nric" name="nric" placeholder="NRIC Number *">
+                                        <br>
+                                        <div class="policyNum">
+                                            <label for="policyNumber"></label><br>
+                                            <input type="text" id="dataEnqpolicyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
+                                            <br>
+                                        </div>
+                                        <label for="ClaimNumber"></label><br>
+                                        <input type="text" id="claimNumber" name="claimNumber" maxlength="12" placeholder="Claim Number (if applicable)">
+                                        <br>
+                                        <label for="email"></label><br>
+                                        <input type="text" id="datacorrectionemail" name="email" placeholder="Email Address *">
+                                        <br>
+                                        <label for="contactNumber"></label><br>
+                                        <input type="tel" id="datacorrectioncontactNumber" name="contactNumber" placeholder="Contact Number *">
+                                        <br>
+                                        <label for="correspondenceAddress"></label><br>
+                                        <textarea placeholder="Correspondence Address *" name="correspondenceAdd" id="correspondenceAdd"></textarea>
+                                        <br>
+                                        <label for="detailsofRequest"></label><br>
+                                        <textarea placeholder="Details of Request *" name="detailsofRequest" id="detailsofRequest"></textarea>
+                                        <br>
+                                        <div class=" recaptcha">
+                                            <div class="g-recaptcha" id="correspondenceAddrcaptcha" data-sitekey="site key"></div>
+                                            <span id="captcha" style="color:red"></span>
+                                            <!-- this will show captcha errors -->
+                                        </div>
+                                        <div class="TNC">
+                                            <div class="checkboxTNC"> <input type="checkbox" id="datacorreectionprivacyNotice" name="privacyNotice" value="privacyNoticeCheckBox">
+                                            </div>
+                                            <div class="labelTNC"><label for="termsCondition"> I have read and understood MSIG’s <a href="/assets/pdf/PrivacyNotice_Eng_May2017.pdf" download>Privacy Notice</a>  and agree to MSIG processing my personal data for the purposes and in the manners set out in the Privacy Notice.</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="formButtons">
+                                            <div class="formChildButtons">
+                                                <input type="submit" id="datacorrectionsubmit" value="Submit">
+                                            </div>
+                                            <div class="formChildButtons">
+                                                <input type="reset" id="datacorrectionreset" value="Clear">
+                                            </div>
+                                        </div>
+                                        <!-- alternative pdf  -->
+                                        <div class="altReturn">
+                                            <p class="altText">Alternatively, you could use the following
+                                                <a class="pdfLink1" href="/assets/pdf/MSIG-Personal-Data-Access-or-Correction-Request-Form.pdf" download>Form</a> and return it back to: </p>
+                                            <div class="altAddress">
+                                                <span>
+                                                        Data Protection Officer MSIG Insurance (Malaysia) Bad,</span> <span>Level 15, Menara Hap Seng 2,</span> <span>Plaza Hap Seng</span> <span>No. 1 Jalan P. Ramlee,<span>                             <span>50250 Kuala Lumpur</span>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- end of Personal Data Correction Form  -->
                     </div>
                 </div>
                 <!-- contact us TAB:  -->

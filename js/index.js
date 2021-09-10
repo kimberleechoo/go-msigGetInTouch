@@ -1,62 +1,123 @@
-// choose product 
-// $('#productEnquiryForm').hide();
-//  $(document).ready(function() {
-//     if ($("#productEnquiry").attr('checked')) {
-//         $('#generalEnquiryForm').hide();
-//         $('#productEnquiryForm').show();
-
-//     }
-//  });
-
-
-
-
-// jQuery(function() {
-//     jQuery("input[name=typeofEnquiry]").change(function() {
-//         if ($(this).val() == "General Enquiry") {
-//             console.log("hi fire");
-//             $('#productEnquiryForm').show();
-//             $('#productEnquiryForm').hide();
-//         } else if ($(this).val() == "Product Enquiry") {
-//             console.log("this is product");
-//             $('#productEnquiryForm').show();
-//             $('#generalEnquiryForm').hide();
-
-
-//         }
-//     })
-// })
-
-
 $(document).ready(function() {
-    $('#productEnquiryForm').hide();
+    console.log(" 🙌🙌🙌 ");
+    $('#productEnquiryFormSection').hide();
+    $('#feedbackFormSection').hide();
+    $('#dataCorrectionFormSection').hide();
+    $('#generalEnquiryForm').show();
+
     // choose product type 
     $("input[name=typeofEnquiry]").change(function() {
         if ($(this).val() == "General Enquiry") {
-            console.log("hi fire");
+            console.log("this is general enq form");
             $('#generalEnquiryForm').show();
-            $('#productEnquiryForm').hide();
+            $('#productEnquiryFormSection').hide();
+            $('#feedbackFormSection').hide();
+            $('#dataCorrectionFormSection').hide();
         } else if ($(this).val() == "Product Enquiry") {
-            console.log("this is product");
-            $('#productEnquiryForm').show();
+            console.log("this is product enquiry");
+            $('#productEnquiryFormSection').show();
             $('#generalEnquiryForm').hide();
+            $('#feedbackFormSection').hide();
+            $('#dataCorrectionFormSection').hide();
+        } else if ($(this).val() == "Feedback/Complaint") {
+            console.log("this is feedback form");
+            $('#feedbackFormSection').show();
+            $('#productEnquiryFormSection').hide();
+            $('#generalEnquiryForm').hide();
+            $('#dataCorrectionFormSection').hide();
+
+        } else if ($(this).val() == "Change of Personal Details") {
+            console.log("this is change of data form");
+            $('#dataCorrectionFormSection').show();
+            $('#generalEnquiryForm').hide();
+            $('#productEnquiryFormSection').hide();
+            $('#feedbackFormSection').hide();
         }
     });
+    //end of choose product type script
+
 
     //policy
-    $("input[name=existingCustomer]").change(function() {
+    $("input[name=GEexistingCustomer]").change(function() {
         if ($(this).val() == "Yes") {
             console.log("existing cust");
-            $('.policyNum').show();
+            $('#generalForm .policyNum').show();
+
+
         } else if ($(this).val() == "No") {
             console.log("Not existing cust");
-            $('.policyNum').hide();
+            $('#generalForm .policyNum').hide();
 
         }
     });
 
-    //submitForm
+    $("input[name=PEexistingCustomer]").change(function() {
+        if ($(this).val() == "Yes") {
+            console.log("existing cust PE");
+            $('#prodEnqForm .policyNum').show();
+
+
+        } else if ($(this).val() == "No") {
+            console.log("Not existing cust PE");
+            $('#prodEnqForm .policyNum').hide();
+
+        }
+    });
+
+    $("input[name=FEexistingCustomer]").change(function() {
+        if ($(this).val() == "Yes") {
+            console.log("existing cust FE");
+            $('#feedbackForm .policyNum').show();
+
+
+        } else if ($(this).val() == "No") {
+            console.log("Not existing cust FE");
+            $('#feedbackForm .policyNum').hide();
+
+        }
+    });
+    //end of policy script 
+    //reset general enquiry form 
+    $('#generalForm #reset').click(function() {
+        console.log("CLEARED !");
+        $(".error").remove();
+        $('form#generalForm :input').css({ border: '' });
+        $('form#generalForm :input').css({ outline: '' });
+
+    });
+    $('#prodEnqreset').click(function() {
+        console.log("PE CLEARED !");
+        $(".error").remove();
+        $('form#prodEnqForm :input').css({ border: '' });
+        $('form#prodEnqForm :input').css({ outline: '' });
+
+    });
+    $('#feedbackreset').click(function() {
+        console.log("FE CLEARED !");
+        $(".error").remove();
+        $('form#feedbackForm :input').css({ border: '' });
+        $('form#feedbackForm :input').css({ outline: '' });
+
+    });
+    $('#datacorrectionreset').click(function() {
+        console.log("DC CLEARED !");
+        $(".error").remove();
+        $('form#dataCorrectionForm :input').css({ border: '' });
+        $('form#dataCorrectionForm :input').css({ outline: '' });
+    });
+    //allows alphanumeric only 
+
+    $(document).on('keypress', '#fullName,#policyNumber,#prodEnqfullName,#prodEnqpolicyNumber,#feedbackfullName,#feedbackpolicyNumber,#dataEnqfullName,#dataEnqpolicyNumber,#claimNumber,#correspondenceAdd', function(event) {
+        var regex = new RegExp("^[a-zA-Z0-9_ ]*$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
+        }
+    });
+    //general enquiry submitForm
     $('#generalForm').submit(function(e) {
+
         e.preventDefault();
         var fullName = $('#fullName').val();
         var emailAdd = $('#email').val();
@@ -66,7 +127,6 @@ $(document).ready(function() {
         var telPattern = /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/;
 
         $('form#generalForm :input').css({ border: '' });
-
         $(".error").remove();
         //fullname
         if (fullName.length < 1) {
@@ -111,14 +171,231 @@ $(document).ready(function() {
         if (!checkboxTNC.checked) {
             console.log("TNC checkbox not checked");
             $("label[for='termsCondition']").after('<span class="error">Please agree to TNC</span>');
-            return false;
+            // $('#privacyNotice').focus($('#privacyNotice').css({ 'outline': '3px solid #E11F27' }));
         }
-        //resetbutton
-        $("#reset").click(function() {
-            $(".error").remove();
-            $('form#generalForm :input').css({ border: '' });
 
-        });
-        return false;
     });
+    //end of general enquiry submitForm
+
+    //product enquiry submission form
+    $('#prodEnqForm').submit(function(e) {
+
+        e.preventDefault();
+        var fullName = $('#prodEnqfullName').val();
+        var emailAdd = $('#prodEnqemail').val();
+        var contactNum = $('#prodEnqcontactNumber').val();
+        var msg = $('#productenqMessage').val();
+        var prodCat = $('#productCategorySel').val();
+
+        var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+        var telPattern = /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/;
+
+        $('form#prodEnqForm :input').css({ border: '' });
+        $(".error").remove();
+        //fullname
+        if (fullName.length < 1) {
+            console.log('nameis empty');
+            $('#prodEnqfullName').after('<span class="error">*This field is required</span>');
+            $('#prodEnqfullName').focus($('#prodEnqfullName').css({ 'border': '1px solid #E11F27' }));
+        }
+        //emailAdd
+        if (emailAdd.length <= 0) {
+            console.log('email empty');
+            $('#prodEnqemail').after('<span class="error">*This field is required</span>');
+            $('#prodEnqemail').focus($('#prodEnqemail').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        if ((emailAdd.length >= 1) && (!pattern.test(emailAdd))) {
+            console.log('email contains weird char');
+            $('#prodEnqemail').after('<span class="error">*Please enter a valid email address</span>');
+            $('#prodEnqemail').focus($('#prodEnqemail').css({ 'border': '1px solid #E11F27' }));
+        }
+        //telnum
+        if (contactNum.length <= 0) {
+            console.log('number empty');
+            $('#prodEnqcontactNumber').after('<span class="error">*This field is required</span>');
+            $('#prodEnqcontactNumber').focus($('#prodEnqcontactNumber').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        if ((contactNum.length >= 1) && (!telPattern.test(contactNum))) {
+            console.log('contact contains weird char');
+            $('#prodEnqcontactNumber').after('<span class="error">*Please enter a valid contact number</span>');
+            $('#prodEnqcontactNumber').focus($('#prodEnqcontactNumber').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        //product category 
+
+        if (prodCat === "") {
+            console.log("product category is empty");
+            $('#productCategorySel').after('<span class="error">*This field is required</span>');
+            $('#productCategorySel').focus($('#productCategorySel').css({ 'border': '1px solid #E11F27' }));
+        }
+
+
+
+        //msgbox
+        if (msg.length <= 0) {
+            console.log('msg empty');
+            $('#productenqMessage').after('<span class="error">*This field is required</span>');
+            $('#productenqMessage').focus($('#productenqMessage').css({ 'border': '1px solid #E11F27' }));
+        }
+        //tnc checkbox
+        var checkboxTNC = document.getElementById('privacyNotice');
+        if (!checkboxTNC.checked) {
+            console.log("pN TNC checkbox not checked");
+            $("label[for='termsCondition']").after('<span class="error">Please agree to TNC</span>');
+            // $('#privacyNotice').focus($('#privacyNotice').css({ 'outline': '3px solid #E11F27' }));
+        }
+
+    });
+    //end of prod enq submission form
+
+    // feedback submission form 
+    $('#feedbackForm').submit(function(e) {
+
+        e.preventDefault();
+        var fullName = $('#feedbackfullName').val();
+        var emailAdd = $('#feedbackemail').val();
+        var contactNum = $('#feedbackcontactNumber').val();
+        var msg = $('#feedbackMessage').val();
+        var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+        var telPattern = /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/;
+
+        $('form#feedbackForm :input').css({ border: '' });
+        $(".error").remove();
+        //fullname
+        if (fullName.length < 1) {
+            console.log('nameis empty');
+            $('#feedbackfullName').after('<span class="error">*This field is required</span>');
+            $('#feedbackfullName').focus($('#feedbackfullName').css({ 'border': '1px solid #E11F27' }));
+        }
+        //emailAdd
+        if (emailAdd.length <= 0) {
+            console.log('email empty');
+            $('#feedbackemail').after('<span class="error">*This field is required</span>');
+            $('#feedbackemail').focus($('#feedbackemail').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        if ((emailAdd.length >= 1) && (!pattern.test(emailAdd))) {
+            console.log('email contains weird char');
+            $('#feedbackemail').after('<span class="error">*Please enter a valid email address</span>');
+            $('#feedbackemail').focus($('#feedbackemail').css({ 'border': '1px solid #E11F27' }));
+        }
+        //telnum
+        if (contactNum.length <= 0) {
+            console.log('number empty');
+            $('#feedbackcontactNumber').after('<span class="error">*This field is required</span>');
+            $('#feedbackcontactNumber').focus($('#feedbackcontactNumber').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        if ((contactNum.length >= 1) && (!telPattern.test(contactNum))) {
+            console.log('contact contains weird char');
+            $('#feedbackcontactNumber').after('<span class="error">*Please enter a valid contact number</span>');
+            $('#feedbackcontactNumber').focus($('#feedbackcontactNumber').css({ 'border': '1px solid #E11F27' }));
+        }
+
+
+        //msgbox
+        if (msg.length <= 0) {
+            console.log('msg empty');
+            $('#feedbackMessage').after('<span class="error">*This field is required</span>');
+            $('#feedbackMessage').focus($('#feedbackMessage').css({ 'border': '1px solid #E11F27' }));
+        }
+        //tnc checkbox
+        var checkboxTNC = document.getElementById('privacyNotice');
+        if (!checkboxTNC.checked) {
+            console.log("feedback TNC checkbox not checked");
+            $("label[for='termsCondition']").after('<span class="error">Please agree to TNC</span>');
+            // $('#privacyNotice').focus($('#privacyNotice').css({ 'outline': '3px solid #E11F27' }));
+        }
+
+    });
+    //end of feedback form 
+
+    //data correction form 
+    $('#dataCorrectionForm').submit(function(e) {
+
+        e.preventDefault();
+        var fullName = $('#dataEnqfullName').val();
+        var emailAdd = $('#datacorrectionemail').val();
+        var contactNum = $('#datacorrectioncontactNumber').val();
+        var msg = $('#detailsofRequest').val();
+        var corAdd = $('#correspondenceAdd').val();
+        var nric = $('#nric').val();
+        var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+        var telPattern = /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/;
+        var nricPattern = /^\d{6}\-\d{2}\-\d{4}$/;
+
+        $('form#dataCorrectionForm :input').css({ border: '' });
+        $(".error").remove();
+        //fullname
+        if (fullName.length < 1) {
+            console.log('nameis empty');
+            $('#dataEnqfullName').after('<span class="error">*This field is required</span>');
+            $('#dataEnqfullName').focus($('#dataEnqfullName').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        //nric 
+        if (nric.length <= 0) {
+            console.log('nric empty');
+            $('#nric').after('<span class="error">*This field is required</span>');
+            $('#nric').focus($('#nric').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        if ((nric.length >= 1) && (!nricPattern.test(nric))) {
+            console.log('email contains weird char');
+            $('#nric').after('<span class="error">*Please enter a valid NRIC number</span>');
+            $('#nric').focus($('#nric').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        //emailAdd
+        if (emailAdd.length <= 0) {
+            console.log('email empty');
+            $('#datacorrectionemail').after('<span class="error">*This field is required</span>');
+            $('#datacorrectionemail').focus($('#datacorrectionemail').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        if ((emailAdd.length >= 1) && (!pattern.test(emailAdd))) {
+            console.log('email contains weird char');
+            $('#datacorrectionemail').after('<span class="error">*Please enter a valid email address</span>');
+            $('#datacorrectionemail').focus($('#datacorrectionemail').css({ 'border': '1px solid #E11F27' }));
+        }
+        //telnum
+        if (contactNum.length <= 0) {
+            console.log('number empty');
+            $('#datacorrectioncontactNumber').after('<span class="error">*This field is required</span>');
+            $('#datacorrectioncontactNumber').focus($('#datacorrectioncontactNumber').css({ 'border': '1px solid #E11F27' }));
+        }
+
+        if ((contactNum.length >= 1) && (!telPattern.test(contactNum))) {
+            console.log('contact contains weird char');
+            $('#datacorrectioncontactNumber').after('<span class="error">*Please enter a valid contact number</span>');
+            $('#datacorrectioncontactNumber').focus($('#datacorrectioncontactNumber').css({ 'border': '1px solid #E11F27' }));
+        }
+
+
+        //correspondence add
+        if (corAdd.length <= 0) {
+            console.log(' address empty');
+            $('#correspondenceAdd').after('<span class="error">*This field is required</span>');
+            $('#correspondenceAdd').focus($('#correspondenceAdd').css({ 'border': '1px solid #E11F27' }));
+        }
+        //details of request
+        if (msg.length <= 0) {
+            console.log('msg empty');
+            $('#detailsofRequest').after('<span class="error">*This field is required</span>');
+            $('#detailsofRequest').focus($('#detailsofRequest').css({ 'border': '1px solid #E11F27' }));
+        }
+        //tnc checkbox
+        var checkboxTNC = document.getElementById('privacyNotice');
+        if (!checkboxTNC.checked) {
+            console.log("data TNC checkbox not checked");
+            $("label[for='termsCondition']").after('<span class="error">Please agree to TNC</span>');
+            // $('#privacyNotice').focus($('#privacyNotice').css({ 'outline': '3px solid #E11F27' }));
+        }
+
+    });
+
+
+
 });
