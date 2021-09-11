@@ -19,22 +19,84 @@
 <body>
     <header>
         <!-- header -->
-        <div class="mainHeader">
-            <!-- navbar -->
-            <div class="menuButton">
-                <a href="#" class="btn btn-default btn-lg navButton navMenuButton">
-                    <span class="glyphicon glyphicon-th"></span>
-                </a>
-            </div>
-            <div class="logo">
-                <p class="logoText">MSIG</p>
-            </div>
-            <div class="searchButton">
-                <a href="#" class="btn btn-default btn-lg navButton navSearchButton">
-                    <span class="glyphicon glyphicon-search"></span>
-                </a>
+        <!-- desktop only Top Header 👉  -->
+        <div>
+            <div id="desktopTopNav">
+                <nav class="navTop">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">GenLink Login </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">GenLink Cargo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Branches</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">Global Sites</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="#"><img src="/assets/icons/ico_facebook.png" alt="FB" style="width:20px;height:20px;"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
+        <div class="headerWrapper">
+            <div class="mainHeader">
+
+                <!-- navbar -->
+                <div class="menuButton">
+                    <a href="#" class="btn btn-default btn-lg navButton navMenuButton">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </a>
+                </div>
+                <div class="logo">
+                    <p class="logoText">MSIG</p>
+                </div>
+                <div class="searchButton">
+                    <a href="#" class="btn btn-default btn-lg navButton navSearchButton">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                </div>
+
+                <div id="mainNavBar">
+
+                    <nav class="navTop">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item ">
+                                    <a class="navMainLink" href="#">about </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navMainLink" href="#">personal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navMainLink" href="#">Business</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navMainLink" href="#">Claims</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="#" class="btn btn-info btn-lg buyNow"> buy now
+                                        <span class="glyphicon glyphicon-triangle-right"></span> 
+                                      </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
         <div class="banner">
         </div>
         <div class="headerBreadcrumb">
@@ -44,35 +106,38 @@
             </ol>
         </div>
     </header>
-    <section class="container introSection">
-        <div class="intro m-2">
-            <h2>Get in Touch</h2>
+    <section class="container introSection desktopGetInTouch">
+        <div class="getintouchSection">
+            <div class="intro m-2">
+                <h2>Get in Touch</h2>
+            </div>
+            <div class="introParagraph pt-3">
+                <p>At MSIG, we are deeply committed to serve you better. With our dedicated team of Customer Service Officers, we are here to help you with any queries and concerns you may have regarding our products and services. Should you require reach
+                    out to us via the available channels below.</p>
+            </div>
         </div>
-        <div class="introParagraph pt-3">
-            <p>At MSIG, we are deeply committed to serve you better. With our dedicated team of Customer Service Officers, we are here to help you with any queries and concerns you may have regarding our products and services. Should you require reach out
-                to us via the available channels below.</p>
-        </div>
+
     </section>
 
     <section id="mobileTab" class="container flex-container formSection">
-        <div style="padding-left:10px; padding-right:10px;">
+        <div class="contentWrapper" style="padding-left:10px; padding-right:10px;">
             <ul class="nav nav-pills navSection">
                 <li class="active"><a data-toggle="pill" href="#writeToUs">Write To Us</a></li>
                 <li><a data-toggle="pill" href="#contactUs">Contact Us</a></li>
             </ul>
 
             <div class="tab-content">
-                <div id="writeToUs" class="tab-pane fade in active">
+                <div id="writeToUs" class="tab-pane fade in active desktopSection">
                     <div id="writeToUs" class="switchTabContent flexItem1">
-                        <p class="bigBlueFont">Write to us your questions, feedback, or request to change your personal details.</p>
+                        <p class="bigBlueFont p-l-r-15">Write to us your questions, feedback, or request to change your personal details.</p>
                         <!-- choose form radiobuttonStartsHere 👉 -->
-                        <div class="enquirySection">
+                        <div class="enquirySection p-l-r-15">
                             <p>Please choose one of the below:<span class="redAsterisk">   *</span></p>
                             <input type="radio" name="typeofEnquiry" id="generalEnquiry" value="General Enquiry" checked>
                             <label for="generalEnquiry">General Enquiry</label>
                             <br>
                             <input type="radio" name="typeofEnquiry" id="productEnquiry" value="Product Enquiry">
-                            <label for="productEnqury">Product Enquiry</label>
+                            <label for="productEnquiry">Product Enquiry</label>
                             <br>
                             <input type="radio" name="typeofEnquiry" id="feedbackComplaint" value="Feedback/Complaint">
                             <label for="feedbackComplaint">Feedback/Complaint</label>
@@ -113,7 +178,7 @@
                                         <label for="contactNumber"></label><br>
                                         <input type="tel" id="contactNumber" name="contactNumber" placeholder="Contact Number *">
                                         <br>
-                                        <div class="policyNum">
+                                        <div class="policyNumGE">
                                             <label for="policyNumber"></label><br>
                                             <input type="text" id="policyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
                                             <br>
@@ -134,7 +199,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="formButtons">
+                                        <div class="formButtons formDesktopButtons">
                                             <div class="formChildButtons">
                                                 <input type="submit" id="submit" value="Submit">
                                             </div>
@@ -180,7 +245,7 @@
                                         <label for="contactNumber"></label><br>
                                         <input type="tel" id="prodEnqcontactNumber" name="contactNumber" placeholder="Contact Number *">
                                         <br>
-                                        <div class="policyNum">
+                                        <div class="policyNumPE">
                                             <label for="policyNumber"></label><br>
                                             <input type="text" id="prodEnqpolicyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
                                             <br>
@@ -278,7 +343,7 @@
                                         <label for="contactNumber"></label><br>
                                         <input type="tel" id="feedbackcontactNumber" name="contactNumber" placeholder="Contact Number*">
                                         <br>
-                                        <div class="policyNum">
+                                        <div class="policyNumFE">
                                             <label for="policyNumber"></label><br>
                                             <input type="text" id="feedbackpolicyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
                                             <br>
@@ -337,10 +402,11 @@
                                             <label for="policyNumber"></label><br>
                                             <input type="text" id="dataEnqpolicyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
                                             <br>
+                                            <label for="ClaimNumber"></label><br>
+                                            <input type="text" id="claimNumber" name="claimNumber" maxlength="12" placeholder="Claim Number (if applicable)">
+                                            <br>
                                         </div>
-                                        <label for="ClaimNumber"></label><br>
-                                        <input type="text" id="claimNumber" name="claimNumber" maxlength="12" placeholder="Claim Number (if applicable)">
-                                        <br>
+
                                         <label for="email"></label><br>
                                         <input type="text" id="datacorrectionemail" name="email" placeholder="Email Address *">
                                         <br>
@@ -392,8 +458,8 @@
                     </div>
                 </div>
                 <!-- contact us TAB:  -->
-                <div id="contactUs" class="tab-pane fade">
-                    <div id="contactUs" class="switchTabContent flexItem2">
+                <div id="contactUs" class="tab-pane fade desktopSectionContactUs">
+                    <div id="contactSection" class="switchTabContent flexItem2">
                         <div class="contactUsFlexContainer">
                             <div class="jumbotron contactUsTab">
                                 <h2 class="contactUsMainTitle">24 Hours Assist Helplines</h2>
@@ -567,17 +633,260 @@
     </section>
 </body>
 <footer>
-    <div>
-        <nav class="footerMenu container container-fluid">
-            <ul>
-                <li>About</li>
-                <li>Personal</li>
-                <li>Business</li>
-                <li>Claims</li>
 
-            </ul>
-        </nav>
+
+
+
+
+
+    <div class="sitemap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel-group clearfix" role="tablist">
+                        <div class="row">
+
+
+                            <div class="col-xs-12 col-sm-2">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapseFooter1" aria-expanded="true" aria-controls="collapseFooter1">
+                      ABOUT
+                      <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapseFooter1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="tabAbout">
+                                        <div class="panel-body">
+                                            <ul>
+
+
+                                                <li><a href="/about/promise-of-service">Our Promise of Service</a></li>
+                                                <li><a href="/about/corporate-governance">Corporate Governance</a></li>
+                                                <li><a href="/about/financial-info">Financial Info</a></li>
+                                                <li><a href="/about/customer-service-charter">Customer Service Charter</a></li>
+                                                <li><a href="/about/careers">Careers</a></li>
+                                                <li><a href="/about/news-media">News & Media</a></li>
+                                                <li><a href="/about/biodiversity">Biodiversity</a></li>
+
+                                                <li><a href="/askmaya">MSIG Guide to Motor Insurance Liberalisation</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xs-12 col-sm-2">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapseFooter2" aria-expanded="true" aria-controls="collapseFooter2">
+                      PERSONAL
+                      <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapseFooter2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="tabAbout">
+                                        <div class="panel-body">
+                                            <ul>
+
+                                                <li><a href="/personal-insurance/products/">All Products</a></li>
+                                                <li><a href="/personal-insurance/products/abc">ABC PA</a></li>
+                                                <li><a href="/personal-insurance/products/All-In-Home">All-In-Home</a></li>
+                                                <li><a href="/personal-insurance/products/cancer-care-365">Cancer Care 365</a></li>
+                                                <li><a href="/personal-insurance/products/e-hailing">E-Hail E-Zee</a></li>
+                                                <li><a href="/personal-insurance/products/ez-plus-critical-care">EZ Plus Critical Care</a></li>
+                                                <li><a href="/personal-insurance/products/flexihealth-insurance">FlexiHealth</a></li>
+                                                <li><a href="/personal-insurance/products/generations-personal-accident">Generations PA</a></li>
+                                                <li><a href="/personal-insurance/products/gluco-safeguard">Gluco SafeGuard</a></li>
+                                                <li><a href="/personal-insurance/products/golfer">Golfer PA</a></li>
+                                                <li><a href="/personal-insurance/products/healthcare-international-insurance">Healthcare International</a></li>
+                                                <li><a href="/personal-insurance/products/home-insurance-add-on">Home Insurance Add-On</a></li>
+                                                <li><a href="/personal-insurance/products/home-safeguard">Home SafeGuard</a></li>
+                                                <li><a href="/personal-insurance/products/houseowner-householder">Houseowner / Householder</a></li>
+                                                <li><a href="/personal-insurance/products/individual-personal-accident">Individual PA</a></li>
+                                                <li><a href="/personal-insurance/products/ladies-lifestyle">Ladies Lifestyle</a></li>
+                                                <li><a href="/personal-insurance/products/Liberalisation-of-Motor-Insurance">Liberalisation of Motor Insurance</a></li>
+                                                <li><a href="/personal-insurance/products/mini-pa">Mini PA</a></li>
+                                                <li><a href="/personal-insurance/products/motor">Motor</a></li>
+                                                <li><a href="/personal-insurance/products/motor-add-on">Motor Add-On</a></li>
+                                                <li><a href="/personal-insurance/products/motor-plus">Motor Plus</a></li>
+                                                <li><a href="/personal-insurance/products/motorcycle/">Motorcycle</a></li>
+                                                <li><a href="/personal-insurance/products/nomination">Nomination</a></li>
+                                                <li><a href="/personal-insurance/products/out-of-pocket-expenses">Out-of-Pocket Expenses (OOPS) PA</a></li>
+                                                <li><a href="/personal-insurance/products/overseas-student">Overseas Student PA</a></li>
+                                                <li><a href="/personal-insurance/products/personal-accident-add-on">Personal Accident Add-On</a></li>
+
+                                                <li><a href="/personal-insurance/product-disclosure-sheets">Product Disclosure Sheets</a></li>
+                                                <li><a href="/personal-insurance/product-enquiry">Product Enquiry</a></li>
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xs-12 col-sm-2">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapseFooter3" aria-expanded="true" aria-controls="collapseFooter3">
+                      BUSINESS
+                      <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapseFooter3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="tabAbout">
+                                        <div class="panel-body">
+                                            <ul>
+
+                                                <li><a href="/business-insurance/products/">All Products</a></li>
+                                                <li><a href="/business-insurance/products/burglary">Burglary</a></li>
+                                                <li><a href="/business-insurance/products/business-safeguard">Business SafeGuard</a></li>
+                                                <li><a href="/business-insurance/products/commercial-motor">Commercial Motor</a></li>
+                                                <li><a href="/business-insurance/products/fire">Fire</a></li>
+                                                <li><a href="/business-insurance/products/fire-add-on">Fire Add-On</a></li>
+                                                <li><a href="/business-insurance/products/foreign-worker-insurance-scheme">Foreign Worker Insurance Scheme</a></li>
+                                                <li><a href="/business-insurance/products/marine-cargo">Marine Cargo</a></li>
+                                                <li><a href="/business-insurance/products/other-commercial-insurance">Other Commercial Insurance</a></li>
+                                                <li><a href="/business-insurance/products/property-protection-package">Property Protection Package</a></li>
+                                                <li><a href="/business-insurance/products/retail-safeguard">Retail SafeGuard</a></li>
+
+
+                                                <li><a href="/business-insurance/product-disclosure-sheets">Product Disclosure Sheets</a></li>
+                                                <li><a href="/business-insurance/product-enquiry">Product Enquiry</a></li>
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-xs-12 col-sm-2">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" href="#collapseFooter4" aria-expanded="true" aria-controls="collapseFooter4">
+                      CLAIMS
+                      <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapseFooter4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="tabAbout">
+                                        <div class="panel-body">
+                                            <ul>
+
+
+                                                <li><a href="/claims/critical-illness.html">Critical Illness</a></li>
+                                                <li><a href="/claims/healthcare.html">Healthcare</a></li>
+                                                <li><a href="/claims/home-protection.html">Home Protection</a></li>
+                                                <li><a href="/claims/motor.html">Motor</a></li>
+                                                <li><a href="/claims/personal-accident.html">Personal Accident</a></li>
+                                                <li><a href="/claims/travel.html">Travel</a></li>
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-xs-12 col-sm-2">
+                                <div class="panel panel-default">
+                                    <div class="non-collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><a href="/contact-us">Contact Us</a></li>
+                                                <li><a href="/branches">Branches</a></li>
+                                                <li><a href="/global-sites">Global Sites</a></li>
+                                                <li><a href="/msig-app">MSIG App</a></li>
+                                                <li><a href="/disclaimer">Disclaimer</a></li>
+                                                <li><a href="/privacy-notice">Privacy Notice</a></li>
+                                                <li><a href="/links">Links</a></li>
+                                                <li><a href="/insurance-/insurance-premium-payment-channels.html">Insurance Premium Payment Channels</a></li>
+                                                <li><a href="/employee-screening">Employee Screening</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-2">
+                                <div class="crossell">
+                                    <div class="crossell-with-cta-only">
+                                        <a href="https://www.msig.com.my/PDF/annualreport/MSIG_Annual_Report_2020.pdf" target="_blank"><img src="/assets/icons/ico-annual-report.png"><span>ANNUAL REPORT</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 footerFlex">
+                    <div class="group-logo">
+                        <ul class="groupUL" style="margin-top:0px;">
+                            <li>
+                                <a href="http://www.insuranceinfo.com.my/" target="_blank"><img src="/assets/icons/logo-insurance-info.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.piam.org.my/" target="_blank"><img src="/assets/icons/logo-persatuan-insuransam-malaysia.png"></a>
+                            </li>
+                            <li>
+                                <a href="http://www.bnm.gov.my" target="_blank"><img src="/assets/icons/logo-bank-negara-malaysia.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="footerWrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9">
+                    <div class="copyright" style="padding-bottom:0px;">MSIG Insurance (Malaysia) Bhd Registration No. 197901002705 (46983-W) is a company licensed under the Financial Services Act 2013 and regulated by Bank Negara Malaysia.</div>
+                    <div class="copyright" style="padding-top:2px;">All Rights Reserved. Copyright &copy; 2021 MSIG Insurance (Malaysia) Bhd Registration No. 197901002705 (46983-W)</div>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <div class="groupUL footer-logo" style="padding-top:20px;"><img src="/assets/icons/logo-insurance-group.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </footer>
 
 </html>

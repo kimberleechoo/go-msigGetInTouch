@@ -1,4 +1,39 @@
+var $window = $(window);
+var windowWidth = $window.width();
+
+function resize() {
+
+
+    if (windowWidth > 767) {
+        console.log('width is more than 767px');
+        $('#contactUs').addClass('in');
+        $('#collapseFooter1').addClass('in collapse');
+        console.log('adding class');
+
+        $('#collapseFooter2').addClass('in collapse');
+        $('#collapseFooter3').addClass('in collapse');
+        $('#collapseFooter4').addClass('in collapse');
+    } else if (windowWidth < 767) {
+        console.log('width is below 767')
+        $('#contactUs').removeClass('in');
+        $('#collapseFooter1').removeClass('in');
+        console.log('removing class');
+
+
+        $('#collapseFooter2').removeClass('in');
+        $('#collapseFooter3').removeClass('in');
+        $('#collapseFooter4').removeClass('in');
+    }
+}
+
 $(document).ready(function() {
+
+
+
+    $window.resize(resize);
+    resize();
+
+
     console.log(" 🙌🙌🙌 ");
     $('#productEnquiryFormSection').hide();
     $('#feedbackFormSection').hide();
