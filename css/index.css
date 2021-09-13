@@ -19,6 +19,10 @@
   }
    */
       
+      * {
+          box-sizing: border-box;
+      }
+      
        :hover {
           text-decoration: none !important;
       }
@@ -216,6 +220,7 @@
           .bigBlueFont {
               padding-top: 0 !important;
               margin-bottom: 0;
+              max-width: 350px;
           }
       }
       
@@ -390,13 +395,46 @@
           padding-bottom: 10px;
       }
       
-      label {
+      .flexRadio label {
           font-family: 'Titillium Web', sans-serif;
           font-weight: normal;
           font-size: 16px;
           color: #646464;
+          margin-bottom: 0;
           padding-left: 15px;
           margin-right: 15px;
+          padding-top: 4px;
+      }
+      
+      .enquirySection label {
+          font-family: 'Titillium Web', sans-serif;
+          font-weight: normal;
+          font-size: 16px;
+          color: #646464;
+          margin-bottom: 0;
+          padding-left: 15px;
+          margin-right: 15px;
+          padding-top: 4px;
+      }
+      
+      .labelTNC label {
+          font-family: 'Titillium Web', sans-serif;
+          font-weight: normal;
+          font-size: 16px;
+          color: #646464;
+          margin-bottom: 0;
+          padding-left: 15px;
+          margin-right: 15px;
+          /* padding-top: 4px; */
+      }
+      
+      .flexRadioWrapper {
+          display: flex;
+      }
+      
+      .flexRadio {
+          display: flex;
+          align-items: center;
       }
       
       label:hover {
@@ -489,7 +527,7 @@
           outline: none;
           border: 1px solid #676767;
           font-size: 16px;
-          padding-left: 12px;
+          padding: 0 25px;
       }
       
       .geForm textarea {
@@ -499,21 +537,22 @@
           outline: none;
           border: 1px solid #676767;
           font-size: 16px;
-          padding-left: 12px;
+          padding: 25px 25px;
           height: 120px;
+          resize: none;
       }
       
       .geForm input::placeholder {
           font-size: 16px;
           color: #646464;
-          padding-left: 12px;
+          /* padding-left: 12px; */
       }
       
       .geForm textarea::placeholder {
           font-size: 16px;
           color: #646464;
-          padding-left: 12px;
-          padding-top: 45px;
+          /* padding-left: 12px; */
+          /* padding-top: 25px; */
       }
       
       .geForm input#message {
@@ -583,6 +622,7 @@
       
       input[type=checkbox] {
           width: 24px;
+          margin-top: 5px;
       }
       
       input[type=checkbox]:hover {
@@ -872,6 +912,14 @@
       ul.groupUL {
           display: flex;
           justify-content: flex-end;
+      }
+      
+      .navSection li {
+          width: 100%;
+      }
+      
+      ul.navSection {
+          display: flex;
       }
       
       @media(min-width:375px) and (max-width:767px) {

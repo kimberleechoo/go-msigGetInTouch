@@ -1,9 +1,7 @@
-var $window = $(window);
-var windowWidth = $window.width();
-
 function resize() {
-
-
+    var $window = $(window);
+    var windowWidth = $window.width();
+    console.log('width is:' + windowWidth);
     if (windowWidth > 767) {
         console.log('width is more than 767px');
         $('#contactUs').addClass('in');
@@ -27,11 +25,14 @@ function resize() {
 }
 
 $(document).ready(function() {
-
-
-
-    $window.resize(resize);
     resize();
+
+    $(window).resize(function(event) {
+        console.log(event);
+        // var winWidth = $(window).width();
+        // console.log('width is ::::' + winWidth);
+        resize();
+    });
 
 
     console.log(" 🙌🙌🙌 ");
@@ -76,12 +77,12 @@ $(document).ready(function() {
     $("input[name=GEexistingCustomer]").change(function() {
         if ($(this).val() == "Yes") {
             console.log("existing cust");
-            $('#generalForm .policyNum').show();
+            $('.policyNumGE').show();
 
 
         } else if ($(this).val() == "No") {
             console.log("Not existing cust");
-            $('#generalForm .policyNum').hide();
+            $('.policyNumGE').hide();
 
         }
     });
@@ -89,12 +90,12 @@ $(document).ready(function() {
     $("input[name=PEexistingCustomer]").change(function() {
         if ($(this).val() == "Yes") {
             console.log("existing cust PE");
-            $('#prodEnqForm .policyNum').show();
+            $('.policyNumPE').show();
 
 
         } else if ($(this).val() == "No") {
             console.log("Not existing cust PE");
-            $('#prodEnqForm .policyNum').hide();
+            $('.policyNumPE').hide();
 
         }
     });
@@ -102,12 +103,12 @@ $(document).ready(function() {
     $("input[name=FEexistingCustomer]").change(function() {
         if ($(this).val() == "Yes") {
             console.log("existing cust FE");
-            $('#feedbackForm .policyNum').show();
+            $('.policyNumFE').show();
 
 
         } else if ($(this).val() == "No") {
             console.log("Not existing cust FE");
-            $('#feedbackForm .policyNum').hide();
+            $('.policyNumFE').hide();
 
         }
     });
@@ -141,15 +142,19 @@ $(document).ready(function() {
         $('form#dataCorrectionForm :input').css({ outline: '' });
     });
     //allows alphanumeric only 
+    var noSpecialCharElements = ['#fullName,#gePolicyNumber,#prodEnqfullName,#prodEnqpolicyNumber,#feedbackfullName,#feedbackpolicyNumber,#dataEnqfullName,#dataEnqpolicyNumber,#claimNumber,#correspondenceAdd']
 
-    $(document).on('keypress', '#fullName,#policyNumber,#prodEnqfullName,#prodEnqpolicyNumber,#feedbackfullName,#feedbackpolicyNumber,#dataEnqfullName,#dataEnqpolicyNumber,#claimNumber,#correspondenceAdd', function(event) {
-        var regex = new RegExp("^[a-zA-Z0-9_ ]*$");
-        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-        if (!regex.test(key)) {
-            event.preventDefault();
-            return false;
-        }
-    });
+    for (let i = 0; i < noSpecialCharElements.length; i++) {
+        $(document).on('keypress', noSpecialCharElements[i], function(event) {
+            var regex = new RegExp("^[a-zA-Z0-9_ ]*$");
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    }
+
     //general enquiry submitForm
     $('#generalForm').submit(function(e) {
 

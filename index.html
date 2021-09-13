@@ -162,11 +162,20 @@
                                         <!-- yes/no existing customer?  -->
                                         <div class="p-l-r-15 p-t-b-15">
                                             <p> Are you an existing MSIG customer?</p>
-                                            <input type="radio" name="GEexistingCustomer" id="existingCustomerYes" value="Yes" checked>
-                                            <label for="existingCustomerYes">Yes </label>
+                                            <div class="flexRadioWrapper">
+                                                <div class="flexRadio">
 
-                                            <input type="radio" name="GEexistingCustomer" id="existingCustomerNo" value="No">
-                                            <label for="existingCustomerNo">No </label>
+                                                    <input type="radio" name="GEexistingCustomer" id="existingCustomerYes" value="Yes" checked>
+                                                    <label for="existingCustomerYes">Yes </label>
+                                                </div>
+
+                                                <div class="flexRadio">
+                                                    <input type="radio" name="GEexistingCustomer" id="existingCustomerNo" value="No">
+                                                    <label for="existingCustomerNo">No </label>
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                         <!-- end yes/no existing customer  -->
                                         <label for="fullName"></label><br>
@@ -180,7 +189,7 @@
                                         <br>
                                         <div class="policyNumGE">
                                             <label for="policyNumber"></label><br>
-                                            <input type="text" id="policyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
+                                            <input type="text" id="gePolicyNumber" name="policyNumber" placeholder="Policy Number (if applicable)">
                                             <br>
                                         </div>
 
@@ -229,11 +238,17 @@
                                         <!-- yes/no existing customer?  -->
                                         <div class="p-l-r-15 p-t-b-15">
                                             <p> Are you an existing MSIG customer?</p>
-                                            <input type="radio" name="PEexistingCustomer" id="prodEnqexistingCustomerYes" value="Yes" checked>
-                                            <label for="prodEnqexistingCustomerYes">Yes </label>
+                                            <div class="flexRadioWrapper">
+                                                <div class="flexRadio">
+                                                    <input type="radio" name="PEexistingCustomer" id="prodEnqexistingCustomerYes" value="Yes" checked>
+                                                    <label for="prodEnqexistingCustomerYes">Yes </label>
+                                                </div>
+                                                <div class="flexRadio">
+                                                    <input type="radio" name="PEexistingCustomer" id="prodEnqexistingCustomerNo" value="No">
+                                                    <label for="prodEnqexistingCustomerNo">No </label>
+                                                </div>
+                                            </div>
 
-                                            <input type="radio" name="PEexistingCustomer" id="prodEnqexistingCustomerNo" value="No">
-                                            <label for="prodEnqexistingCustomerNo">No </label>
                                         </div>
                                         <!-- end yes/no existing customer  -->
                                         <label for="fullName"></label><br>
@@ -254,10 +269,18 @@
                                         <div class="typeOfProduct">
                                             <div>
                                                 <p>Type of Product</p>
-                                                <input type="radio" name="typeofProducts" id="personalProduct" value="Personal" checked>
-                                                <label for="generalEnqury">Personal </label>
-                                                <input type="radio" name="typeofProducts" id="businessProduct" value="Business">
-                                                <label for="generalEnqury">Business </label>
+                                                <div class="flexRadioWrapper">
+                                                    <div class="flexRadio">
+                                                        <input type="radio" name="typeofProducts" id="personalProduct" value="Personal" checked>
+                                                        <label for="generalEnqury">Personal </label>
+                                                        <div class="flexRadio"> <input type="radio" name="typeofProducts" id="businessProduct" value="Business">
+                                                            <label for="generalEnqury">Business </label></div>
+
+                                                    </div>
+                                                </div>
+
+
+
                                             </div>
                                             <div class="productCategory ">
 
@@ -315,7 +338,10 @@
                         <div id="feedbackFormSection" class="formContainer">
                             <div class="formTitle">
                                 <p class="bigBlueFont p-l-r-15">Feedback / Complaint Form</p>
+
                                 <p class="redText p-l-r-15">(*) Required information</p>
+
+
                             </div>
                             <div>
                                 <p class="p-l-r-15 p-t-b-15">Use the form below to drop us an email and we will be in touch with you soon.</p>
@@ -327,11 +353,18 @@
                                         <!-- yes/no existing customer?  -->
                                         <div class="p-l-r-15 p-t-b-15">
                                             <p> Are you an existing MSIG customer?</p>
-                                            <input type="radio" name="FEexistingCustomer" id="feedbackexistingCustomerYes" value="Yes" checked>
-                                            <label for="feedbackexistingCustomerYes">Yes </label>
+                                            <div class="flexRadioWrapper">
+                                                <div class="flexRadio">
+                                                    <input type="radio" name="FEexistingCustomer" id="feedbackexistingCustomerYes" value="Yes" checked>
+                                                    <label for="feedbackexistingCustomerYes">Yes </label>
+                                                    <div class="flexRadio">
+                                                        <input type="radio" name="FEexistingCustomer" id="feedbackexistingCustomerNo" value="No">
+                                                        <label for="feedbackexistingCustomerNo">No </label>
+                                                    </div>
 
-                                            <input type="radio" name="FEexistingCustomer" id="feedbackexistingCustomerNo" value="No">
-                                            <label for="feedbackexistingCustomerNo">No </label>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <!-- end yes/no existing customer  -->
                                         <label for="fullName"></label><br>
