@@ -263,7 +263,7 @@
       }
       
       .logo {
-          background: url('assets/msig-logo.png');
+          background: url('../assets/banner/msig-logo.png');
           background-repeat: no-repeat;
           background-size: 100%;
       }
@@ -805,7 +805,7 @@
       
       .pdfLink {
           padding-left: 22px;
-          background: url('assets/icons/pdf-file.svg') no-repeat 3px 6px;
+          background: url('../assets/icons/pdf-file.svg') no-repeat 3px 6px;
           background-size: 13px;
           display: block;
           padding-top: 2px;
@@ -816,7 +816,7 @@
       
       .pdfLink1 {
           padding-left: 22px;
-          background: url('assets/icons/pdf-file.svg') no-repeat 3px 6px;
+          background: url('../assets/icons/pdf-file.svg') no-repeat 3px 6px;
           background-size: 13px;
           display: inline-block;
           padding-top: 2px;
@@ -923,12 +923,12 @@
       }
       
       @media(min-width:375px) and (max-width:767px) {
-          ul.groupUL {
+          .groupUL.footer-logo {
               display: flex;
               justify-content: center;
           }
           .footerFlex {
-              display: flex;
-              justify-content: center;
+              display: flex ;
+              justify-content: center !important;
           }
       }
