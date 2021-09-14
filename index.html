@@ -133,18 +133,43 @@
                         <!-- choose form radiobuttonStartsHere 👉 -->
                         <div class="enquirySection p-l-r-15">
                             <p>Please choose one of the below:<span class="redAsterisk">   *</span></p>
-                            <input type="radio" name="typeofEnquiry" id="generalEnquiry" value="General Enquiry" checked>
-                            <label for="generalEnquiry">General Enquiry</label>
-                            <br>
-                            <input type="radio" name="typeofEnquiry" id="productEnquiry" value="Product Enquiry">
-                            <label for="productEnquiry">Product Enquiry</label>
-                            <br>
-                            <input type="radio" name="typeofEnquiry" id="feedbackComplaint" value="Feedback/Complaint">
-                            <label for="feedbackComplaint">Feedback/Complaint</label>
-                            <br>
-                            <input type="radio" name="typeofEnquiry" id="changeOfPersonal" value="Change of Personal Details">
-                            <label for="changeOfPersonal">Change of Personal Details</label>
+                            <div class="productRadioSection">
+                                <div class="productWrapper">
+                                    <div class="enquiryRadio flexRadioEnq">
+                                        <input type="radio" name="typeofEnquiry" id="generalEnquiry" value="General Enquiry" checked>
+                                        <label for="generalEnquiry">General Enquiry</label>
+                                        <br>
+                                    </div>
+                                    <div class="prodEnqSpacing">
+                                        <div class="enquiryRadio flexRadioEnq">
+                                            <input type="radio" name="typeofEnquiry" id="productEnquiry" value="Product Enquiry">
+                                            <label for="productEnquiry">Product Enquiry</label>
+                                            <br>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="enquiryRadio flexRadioEnq">
+                                        <input type="radio" name="typeofEnquiry" id="feedbackComplaint" value="Feedback/Complaint">
+                                        <label for="feedbackComplaint">Feedback/Complaint</label>
+                                        <br>
+                                    </div>
+                                    <div class="enquiryRadio flexRadioEnq">
+                                        <input type="radio" name="typeofEnquiry" id="changeOfPersonal" value="Change of Personal Details">
+                                        <label for="changeOfPersonal">Change of Personal Details</label>
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </div>
+
                         </div>
+
+
+
                         <!-- choose form radioButtonEndsHere -->
                         <!-- general inquiry form 👉 -->
                         <div id="generalEnquiryForm" class="formContainer">
@@ -160,7 +185,7 @@
 
                                     <form name="generalEnquiryForm" id="generalForm" action="#" autocomplete="off" class="geForm p-l-r-15">
                                         <!-- yes/no existing customer?  -->
-                                        <div class="p-l-r-15 p-t-b-15">
+                                        <div class="p-t-b-15">
                                             <p> Are you an existing MSIG customer?</p>
                                             <div class="flexRadioWrapper">
                                                 <div class="flexRadio">
@@ -236,7 +261,7 @@
 
                                     <form id="prodEnqForm" action="#" autocomplete="off" class="geForm p-l-r-15">
                                         <!-- yes/no existing customer?  -->
-                                        <div class="p-l-r-15 p-t-b-15">
+                                        <div class="p-t-b-15">
                                             <p> Are you an existing MSIG customer?</p>
                                             <div class="flexRadioWrapper">
                                                 <div class="flexRadio">
@@ -285,7 +310,7 @@
                                             <div class="productCategory ">
 
                                                 <select id="productCategorySel" name="productCategory">
-                                                <option value="" selected>Product Category *</option>
+                                                <option value="" disabled selected>Product Category *</option>
                                                 <option value="cat1">Category 1</option>
                                                 <option value="cat2">Category 2</option>
                                                 <option value="cat3">Category 3</option>
@@ -351,7 +376,7 @@
 
                                     <form name="feedbackCompForm" id="feedbackForm" action="#" autocomplete="off" class="geForm p-l-r-15">
                                         <!-- yes/no existing customer?  -->
-                                        <div class="p-l-r-15 p-t-b-15">
+                                        <div class="p-t-b-15">
                                             <p> Are you an existing MSIG customer?</p>
                                             <div class="flexRadioWrapper">
                                                 <div class="flexRadio">
@@ -374,7 +399,7 @@
                                         <input type="text" id="feedbackemail" name="email" placeholder="Email Address *">
                                         <br>
                                         <label for="contactNumber"></label><br>
-                                        <input type="tel" id="feedbackcontactNumber" name="contactNumber" placeholder="Contact Number*">
+                                        <input type="tel" id="feedbackcontactNumber" name="contactNumber" placeholder="Contact Number *">
                                         <br>
                                         <div class="policyNumFE">
                                             <label for="policyNumber"></label><br>
@@ -452,6 +477,7 @@
                                         <label for="detailsofRequest"></label><br>
                                         <textarea placeholder="Details of Request *" name="detailsofRequest" id="detailsofRequest"></textarea>
                                         <br>
+                                        <p class="detailsReq">Please note that the information is not encrypted during transmission.</p>
                                         <div class=" recaptcha">
                                             <div class="g-recaptcha" id="correspondenceAddrcaptcha" data-sitekey="site key"></div>
                                             <span id="captcha" style="color:red"></span>
@@ -509,7 +535,7 @@
                                             <div class="jumboColumn2">
                                                 <p class="contactTitle">Motor Assist</p>
                                                 <p class="contactInfo">Motor - Accident & Breakdown Assistance Services</p>
-                                                <p class="contactNum">1-300-880-833</p>
+                                                <p class="contactNum"><a href="tel:+1-300-880-833">1-300-880-833</a></p>
                                             </div>
                                         </div>
 
@@ -519,14 +545,15 @@
                                     <div class="jumboRow">
                                         <div class="jumboColumnIMG">
                                             <div class="jumboColumn1">
-                                                <img src="assets/icons/Motor Assist.svg" alt="Home Assist">
+                                                <img src="assets/icons/Home Assist.svg" alt="Home Assist">
                                             </div>
                                         </div>
                                         <div class="jumboColumnTEXT">
                                             <div class="jumboColumn2">
                                                 <p class="contactTitle">Home Assist</p>
                                                 <p class="contactInfo">Home Protection Policies</p>
-                                                <p class="contactNum">1-300-880-863</p>
+                                                <p class="contactNum">
+                                                    <a href="tel:+1-300-880-863"> 1-300-880-863</a></p>
                                             </div>
                                         </div>
 
@@ -543,7 +570,7 @@
                                             <div class="jumboColumn2">
                                                 <p class="contactTitle">MSIG Assist (International)</p>
                                                 <p class="contactInfo">Travel Insurance Policy, Overseas Student Insurance Policy, Healthcare International Insurance Policy (evacuation & repatriation)</p>
-                                                <p class="contactNum">+603 7965 3930</p>
+                                                <p class="contactNum"><a href="tel:+603-7965-3930">+603 7965 3930</a> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -559,7 +586,7 @@
                                             <div class="jumboColumn2">
                                                 <p class="contactTitle">MSIG Assist (Domestic)</p>
                                                 <p class="contactInfo">Healthcare International Insurance Policy, Flexihealth Insurance Policy, Edu Medicare Policy</p>
-                                                <p class="contactNum">+603 7628 3980</p>
+                                                <p class="contactNum"> <a href="tel:+603-7628-3980">+603 7628 3980</a></p>
                                             </div>
                                         </div>
 
@@ -588,10 +615,10 @@
                                             <div class="jumboColumn2">
                                                 <p class="contactTitle">Customer Service Hotline</p>
 
-                                                <p class="contactNum">1-800-88-MSIG (6744)</p>
+                                                <p class="contactNum"><a href="tel:+1-800-88-6744">1-800-88-MSIG (6744)</a></p>
                                                 <p class="contactTitle">General Line</p>
 
-                                                <p class="contactNum">+603 2050 8228</p>
+                                                <p class="contactNum"><a href="tel:+603-2050-8228">+603 2050 8228</a> </p>
                                             </div>
                                         </div>
 
@@ -608,7 +635,7 @@
                                             <div class="jumboColumn2">
                                                 <p class="contactTitle">Fax</p>
 
-                                                <p class="contactNum">+603 2026 8086</p>
+                                                <p class="contactNum"><a href="tel:+603-2026-8086">+603 2026 8086</a> </p>
                                             </div>
                                         </div>
 
@@ -625,7 +652,7 @@
                                             <div class="jumboColumn2">
                                                 <p class="contactTitle">Bancassurance Hotline</p>
 
-                                                <p class="contactNum">1-800-88-6163</p>
+                                                <p class="contactNum"><a href="tel:+1-800-88-6163">1-800-88-6163</a> </p>
                                             </div>
                                         </div>
                                     </div>
@@ -640,8 +667,8 @@
                                         <div class="jumboColumnTEXT">
                                             <div class="jumboColumn2">
                                                 <p class="contactTitle">MSIG Assist (Domestic)</p>
-                                                <p class="directionText">Get Directions
-                                                    <a href="#">
+                                                <p class="directionText"><a href="https://www.msig.com.my/branches/">Get Directions</a>
+                                                    <a href="https://www.msig.com.my/branches/">
                                                         <span class="glyphicon glyphicon-arrow-right"></span>
                                                     </a>
                                                 </p>

@@ -164,7 +164,7 @@ $(document).ready(function() {
         var contactNum = $('#contactNumber').val();
         var msg = $('#message').val();
         var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
-        var telPattern = /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/;
+        var telPattern = /^\+?6?(?:01?[0-46-9]-?\d{7,8}|0\d{8})$/;
 
         $('form#generalForm :input').css({ border: '' });
         $(".error").remove();
@@ -228,7 +228,11 @@ $(document).ready(function() {
         var prodCat = $('#productCategorySel').val();
 
         var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
-        var telPattern = /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/;
+        // var telPattern = /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/;
+
+        var telPattern = /^\+?6?(?:01?[0-46-9]-?\d{7,8}|0\d{8})$/;
+
+
 
         $('form#prodEnqForm :input').css({ border: '' });
         $(".error").remove();
@@ -299,7 +303,7 @@ $(document).ready(function() {
         var contactNum = $('#feedbackcontactNumber').val();
         var msg = $('#feedbackMessage').val();
         var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
-        var telPattern = /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/;
+        var telPattern = /^\+?6?(?:01?[0-46-9]-?\d{7,8}|0\d{8})$/;
 
         $('form#feedbackForm :input').css({ border: '' });
         $(".error").remove();
@@ -363,7 +367,7 @@ $(document).ready(function() {
         var corAdd = $('#correspondenceAdd').val();
         var nric = $('#nric').val();
         var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
-        var telPattern = /^(\+?6?01)[0-46-9]-*[0-9]{7,8}$/;
+        var telPattern = /^\+?6?(?:01?[0-46-9]-?\d{7,8}|0\d{8})$/;
         var nricPattern = /^\d{6}\-\d{2}\-\d{4}$/;
 
         $('form#dataCorrectionForm :input').css({ border: '' });
