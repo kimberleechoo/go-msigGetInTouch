@@ -918,6 +918,10 @@
           margin-top: 10px;
       }
       
+      footer .panel-title {
+          text-align: center;
+      }
+      
       .panel-title>a {
           color: #000;
           font-weight: 600;
