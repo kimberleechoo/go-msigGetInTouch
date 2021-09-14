@@ -839,7 +839,7 @@
           box-sizing: border-box;
           -webkit-appearance: none;
           -moz-appearance: none;
-          background-image: url('/assets/icons/caret-down.svg');
+          background-image: url('../assets/icons/caret-down.svg');
           background-repeat: no-repeat;
           background-position: right 7% center;
           /* -webkit-box-sizing: border-box;
