@@ -172,6 +172,24 @@
           }
       }
       
+      @media(min-width:300px) and (max-width:359px) {
+          .banner {
+              background-image: url('../assets/banner/mainBannerImg.png') !important;
+              height: 75px !important;
+              background-size: cover;
+              background-repeat: no-repeat;
+          }
+          .formContainer {
+              width: 285px !important;
+          }
+      }
+      
+      @media(min-width:360px) and (max-width:376px) {
+          .formContainer {
+              width: 315px !important;
+          }
+      }
+      
       @media(min-width:411px) and (max-width:500px) {
           .banner {
               background-image: url('../assets/banner/mainBannerImg.png') !important;
@@ -192,7 +210,7 @@
       
       @media(min-width:700px) and (max-width:890px) {
           .banner {
-              background-image: url('../assets/contact-us-Banner.png') !important;
+              background-image: url('../assets/banner/mainBannerImg.png') !important;
               height: 180px !important;
               background-size: cover;
               background-repeat: no-repeat;
@@ -239,6 +257,13 @@
       }
       
       @media(min-width:1200px) {
+          .formContainer {
+              border: 1px solid #E6E6E6;
+              padding-bottom: 48px;
+              margin-bottom: 48px;
+              margin-top: 30px;
+              width: 624px !important;
+          }
           ol.breadcrumb {
               margin-left: 71px !important;
           }
@@ -280,6 +305,11 @@
       
       #mainNavBar {
           display: none;
+      }
+      
+      .flexRadioEnq {
+          display: flex;
+          align-items: center;
       }
       
       .tab-content {
@@ -443,7 +473,7 @@
           font-size: 16px;
           color: #646464;
           margin-bottom: 0;
-          padding-left: 15px;
+          /* padding-left: 15px; */
           margin-right: 15px;
           padding-top: 4px;
       }
@@ -454,7 +484,7 @@
           font-size: 16px;
           color: #646464;
           margin-bottom: 0;
-          padding-left: 15px;
+          /* padding-left: 15px; */
           margin-right: 15px;
           padding-top: 4px;
       }
@@ -484,7 +514,7 @@
           font-weight: 600;
           font-size: 16px;
           color: #1C0063;
-          padding-left: 15px;
+          /* padding-left: 15px; */
           margin-right: 15px;
           transition: 1s;
       }
@@ -495,10 +525,10 @@
           -moz-appearance: none;
           appearance: none;
           display: inline-block;
-          width: 25px;
-          height: 25px;
-          padding: 3px;
-          margin-right: 5px;
+          width: 16px;
+          height: 16px;
+          padding: 2px;
+          margin-right: 8px;
           justify-content: center;
           /* background-color only for content */
           background-clip: content-box;
@@ -510,21 +540,19 @@
       input[type="radio"]:focus {
           outline: 0;
       }
-      
-      input[type="radio"]:hover {
+      /* input[type="radio"]:hover {
           border: 1px solid #1C0063;
           transition: 1s;
-      }
+      } */
       /* appearance for checked radiobutton */
       
       input[type="radio"]:checked {
           background-color: #E11F27;
           border-radius: 50%;
       }
-      
-      .formContainer {
+      /* .formContainer {
           margin-top: 30px;
-      }
+      } */
       
       .formContainer .formTitle {
           background: #F7F7F7;
@@ -533,8 +561,8 @@
       }
       
       .p-l-r-15 {
-          padding-left: 15px;
-          padding-right: 15px;
+          padding-left: 16px;
+          padding-right: 16px;
       }
       
       .p-t-b-15 {
@@ -559,6 +587,8 @@
           border: 1px solid #E6E6E6;
           padding-bottom: 48px;
           margin-bottom: 48px;
+          margin-top: 30px;
+          /* width: auto; */
       }
       
       .geForm input[type="text"],
@@ -567,7 +597,7 @@
           border-radius: 32px;
           height: 80px;
           outline: none;
-          border: 1px solid #676767;
+          border: 1px solid #BBBBBB;
           font-size: 16px;
           padding: 0 25px;
       }
@@ -577,7 +607,7 @@
           border-radius: 32px;
           height: 80px;
           outline: none;
-          border: 1px solid #676767;
+          border: 1px solid #BBBBBB;
           font-size: 16px;
           padding: 25px 25px;
           height: 120px;
@@ -818,7 +848,12 @@
       
       span.error {
           color: #E11F27;
-          padding: 10px;
+          font-style: italic;
+          font-weight: 600;
+          display: inline-block;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 8px;
       }
       /* form dropdown  */
       
@@ -829,7 +864,7 @@
           border-radius: 32px;
           height: 80px;
           outline: none;
-          border: 1px solid #676767;
+          border: 1px solid #BBBBBB;
           color: #1C0063;
           font-family: 'Titillium Web', sans-serif;
           padding-left: 15px;
@@ -877,6 +912,16 @@
           color: #1C0063;
           font-size: 16px;
           font-weight: 700;
+      }
+      
+      .pdfWrapper {
+          padding-top: 24px;
+          padding-bottom: 0;
+          margin-bottom: 4.5px !important;
+      }
+      
+      .pdfBM.p-l-r-15 {
+          padding-top: 4.5px;
       }
       
       .geForm input#correspondenceAddress {
